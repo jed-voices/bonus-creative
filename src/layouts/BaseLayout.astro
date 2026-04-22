@@ -1,0 +1,109 @@
+---
+import '../styles/global.css';
+import { site } from '../data/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  path?: string;
+  image?: string;
+}
+
+const {
+  title,
+  description = site.description,
+  path = '/',
+  image = '/og-default.svg'
+} = Astro.props;
+
+const canonical = new URL(path, Astro.site ?? site.domain);
+const imageUrl = new URL(image, canonical.origin);
+const nav = [
+  { href: '/', label: 'Home' },
+  { href: '/work/', label: 'Work' },
+  { href: '/services/', label: 'Services' },
+  { href: '/about/', label: 'About' },
+  { href: '/case-studies/', label: 'Case Studies' },
+  { href: '/contact/', label: 'Contact' }
+];
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#09090b" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      name: site.name,
+      url: String(canonical.origin),
+      areaServed: ['Oklahoma', 'Oklahoma City'],
+      email: site.email,
+      telephone: site.phone,
+      description,
+      sameAs: [site.instagram, site.vimeo, site.youtube],
+      serviceType: [
+        'Oklahoma video producer',
+        'Oklahoma City video production',
+        'Branded films',
+        'Documentary filmmaking',
+        'Nonprofit video production',
+        'Church media production',
+        'Event video production'
+      ]
+    })} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="/">
+          <span>Bonus</span>
+          <span>Creative</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          {nav.map((item) => (
+            <a href={item.href} aria-current={Astro.url.pathname === item.href ? 'page' : undefined}>{item.label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="grid" style="gap:.55rem;">
+          <div class="brand brand--footer">
+            <span>Bonus</span>
+            <span>Creative</span>
+          </div>
+          <p>Oklahoma-based cinematic storytelling for brands, nonprofits, churches, founders, and events.</p>
+        </div>
+        <div class="footer-links">
+          <a href="/work/">Work</a>
+          <a href="/services/">Services</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+        </div>
+        <div class="footer-links footer-links--right">
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+          <a href={`tel:${site.phone.replace(/[^\d]/g, '')}`}>{site.phone}</a>
+          <a href={site.instagram} target="_blank" rel="noreferrer">Instagram</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
