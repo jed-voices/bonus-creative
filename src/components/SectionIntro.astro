@@ -1,0 +1,13 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  copy?: string;
+}
+const { eyebrow, title, copy } = Astro.props;
+---
+<div class="grid" style="gap:.75rem; max-width: 48rem; margin-bottom: 1.5rem;">
+  {eyebrow && <div class="eyebrow">{eyebrow}</div>}
+  <h2>{title}</h2>
+  {copy && <p>{copy}</p>}
+</div>
