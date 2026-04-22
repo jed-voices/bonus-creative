@@ -1,0 +1,34 @@
+---
+interface Props {
+  title: string;
+  label?: string;
+  poster: string;
+  videoUrl?: string;
+}
+
+const { title, label = 'Director reel', poster, videoUrl = '' } = Astro.props;
+const hasVideo = Boolean(videoUrl && videoUrl.trim());
+---
+<div class="lite-video">
+  <div class="lite-video__frame">
+    <img src={poster} alt={`${title} poster frame`} loading="eager" />
+    {hasVideo ? (
+      <a class="lite-video__play" href={videoUrl} target="_blank" rel="noreferrer">
+        <span>Watch reel</span>
+      </a>
+    ) : (
+      <div class="lite-video__play lite-video__play--static" aria-hidden="true">
+        <span>Add Vimeo or YouTube reel URL</span>
+      </div>
+    )}
+  </div>
+  <div class="lite-video__meta">
+    <div class="eyebrow">{label}</div>
+    <strong>{title}</strong>
+    {hasVideo ? (
+      <p>Click to open the reel in a lightweight new tab. This keeps the homepage fast while still giving the work a strong front door.</p>
+    ) : (
+      <p>The reel slot is wired and ready. Drop in a Vimeo or YouTube link in <code>src/data/site.ts</code> and this becomes your live watch entry point.</p>
+    )}
+  </div>
+</div>
