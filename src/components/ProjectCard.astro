@@ -1,0 +1,19 @@
+---
+interface Props {
+  href: string;
+  poster: string;
+  category: string;
+  title: string;
+  summary: string;
+  outcome?: string;
+}
+
+const { href, poster, category, title, summary, outcome } = Astro.props;
+---
+<a class="work-card" href={href}>
+  <img class="poster" src={poster} alt={`${title} poster`} loading="lazy" />
+  <div class="kicker">{category}</div>
+  <strong>{title}</strong>
+  <p>{summary}</p>
+  {outcome && <p class="small-note">{outcome}</p>}
+</a>
