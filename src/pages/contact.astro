@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+<BaseLayout title="Contact | Bonus Creative" description="Start a project with Bonus Creative." path="/contact/">
+  <section class="page-hero">
+    <div class="container grid" style="gap:1rem; max-width:52rem;">
+      <div class="eyebrow">Contact</div>
+      <h1>Let’s make something worth watching.</h1>
+      <p>Share the project, the timeline, and what the film needs to do. Keep it simple. We can shape the right approach from there.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-layout">
+      <div class="contact-form">
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your name" />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" />
+        </label>
+        <label>
+          Project type
+          <select name="projectType">
+            <option>Branded film</option>
+            <option>Documentary / story-driven</option>
+            <option>Nonprofit storytelling</option>
+            <option>Church media</option>
+            <option>Event coverage</option>
+            <option>Drone cinematography</option>
+            <option>Production partner</option>
+          </select>
+        </label>
+        <label>
+          Timeline
+          <select name="timeline">
+            <option>As soon as possible</option>
+            <option>Within 30 days</option>
+            <option>1 to 3 months</option>
+            <option>3 months or more</option>
+          </select>
+        </label>
+        <label>
+          Budget range
+          <select name="budget">
+            <option>Prefer not to say</option>
+            <option>Under $5,000</option>
+            <option>$5,000 to $10,000</option>
+            <option>$10,000 to $20,000</option>
+            <option>$20,000+</option>
+          </select>
+        </label>
+        <label>
+          Project details
+          <textarea name="message" placeholder="What are you making, who is it for, and what should it accomplish?"></textarea>
+        </label>
+        <button class="btn btn-primary" type="button">Send Inquiry</button>
+        <p class="small-note">This is a starter front-end form. Hook it to Formspree, Basin, or your preferred form endpoint before launch.</p>
+      </div>
+
+      <div class="contact-list">
+        <div class="contact-card">
+          <strong>Email</strong>
+          <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+        </div>
+        <div class="contact-card">
+          <strong>Phone</strong>
+          <p><a href={`tel:${site.phone.replace(/[^\d]/g, '')}`}>{site.phone}</a></p>
+        </div>
+        <div class="contact-card">
+          <strong>Instagram</strong>
+          <p><a href={site.instagram} target="_blank" rel="noreferrer">Follow on Instagram</a></p>
+        </div>
+        <div class="contact-card">
+          <strong>Coverage area</strong>
+          <p>Oklahoma City, Oklahoma, and projects that travel well.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
