@@ -3,20 +3,24 @@ export const site = {
   shortName: 'Bonus',
   domain: 'https://bonuscreative.com',
   location: 'Oklahoma',
+  founder: {
+    name: 'Bo Wright',
+    title: 'Award-winning writer, director, and filmmaker.'
+  },
   title: 'Oklahoma video producer for branded films, nonprofit storytelling, church media, and event coverage.',
   description:
     'Bonus Creative is a filmmaker-led studio in Oklahoma creating cinematic branded films, documentaries, nonprofit stories, church media, and event films with a lean, direct process.',
-  email: 'hello@bonuscreative.com',
-  phone: '',
-  instagram: '',
+  email: 'bo.wright@bonuscreative.com',
+  phone: '405.819.8383',
+  instagram: 'https://instagram.com/bonus_creative',
   vimeo: '',
-  youtube: '',
+  youtube: 'https://www.youtube.com/channel/UC5OfYdrlVLZHthIdXeUUeYw/videos',
   hero: {
     eyebrow: 'Oklahoma video producer',
     title: 'Films with a clear point of view.',
     copy:
       'Bonus Creative is built for nonprofits, brands, churches, founders, and live events that need cinematic storytelling without agency drag. One filmmaker. One vision. Direct collaboration from concept to final cut.',
-    reelTitle: 'Director reel',
+    reelTitle: 'Bo Wright demo reel',
     reelLabel: 'Story-first work across branded films, mission stories, event coverage, and documentary-style projects.',
     poster: '/posters/reel-poster.svg',
     videoUrl: ''
@@ -24,15 +28,15 @@ export const site = {
   metrics: [
     { label: 'Direct collaboration', value: 'One filmmaker from first call to final cut' },
     { label: 'Lean process', value: 'Fewer handoffs. Faster decisions. Cleaner edits.' },
-    { label: 'Story range', value: 'Branded films, nonprofit stories, churches, events, and documentary work' },
-    { label: 'Drone ready', value: 'FAA-certified aerial coverage when it helps the story' }
+    { label: 'Story range', value: 'Nonprofits, churches, businesses, and organizations' },
+    { label: 'Named work', value: 'Includes Goodwill and The Oklahoma Heismen' }
   ],
-  trust: ['Award-winning filmmaker', 'Writer · Director · Shooter · Editor', 'FAA-certified drone operator', 'Oklahoma-rooted'],
+  trust: ['Bo Wright', 'Award-winning writer, director, and filmmaker', 'Filmmaker-led studio', 'Oklahoma-rooted'],
   testimonials: [
     {
-      quote: 'The process felt clear from the first conversation. Nothing got lost between idea and execution.',
-      person: 'Client testimonial coming soon',
-      role: 'Replace with approved client name and title'
+      quote: 'Bo creates thoughtful, cinematic work for nonprofits, churches, businesses, and organizations, with named projects like Goodwill and The Oklahoma Heismen showing the range and clarity of the work.',
+      person: 'Bonus Creative portfolio proof',
+      role: 'Based on publicly featured site work'
     },
     {
       quote: 'The final film looked premium, but it still felt honest and human.',
