@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionIntro from '../../components/SectionIntro.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import FinalCta from '../../components/FinalCta.astro';
+import { projects } from '../../data/site';
+---
+<BaseLayout title="Case Studies | Bonus Creative" description="Case studies from Bonus Creative." path="/case-studies/">
+  <section class="page-hero">
+    <div class="container grid" style="gap:1rem; max-width:54rem;">
+      <div class="eyebrow">Case studies</div>
+      <h1>How the work is shaped, not just how it looks.</h1>
+      <p>Each case study shows the client need, the creative approach, the production logic, and the practical result.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro eyebrow="Selected projects" title="A cleaner look at the thinking behind the films." />
+      <div class="cards-3">
+        {projects.map((project) => (
+          <ProjectCard href={`/case-studies/${project.slug}/`} poster={project.poster} category={project.category} title={project.title} summary={project.summary} outcome={project.outcome} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FinalCta />
+</BaseLayout>
