@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionIntro from '../components/SectionIntro.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import FinalCta from '../components/FinalCta.astro';
+import { projects } from '../data/site';
+---
+<BaseLayout title="Work | Bonus Creative" description="Selected work from Bonus Creative, including nonprofit films, branded films, and event storytelling." path="/work/">
+  <section class="page-hero">
+    <div class="container grid" style="gap:1rem; max-width:52rem;">
+      <div class="eyebrow">Work</div>
+      <h1>Selected films built to feel clear, cinematic, and useful.</h1>
+      <p>Each project is shaped to do more than look good. The goal is always to move the right audience toward trust, clarity, or action.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-row">
+        <div class="filter-chip is-active">All</div>
+        <div class="filter-chip">Branded films</div>
+        <div class="filter-chip">Nonprofit</div>
+        <div class="filter-chip">Church</div>
+        <div class="filter-chip">Events</div>
+      </div>
+      <div class="cards-3">
+        {projects.map((project) => (
+          <ProjectCard href={`/case-studies/${project.slug}/`} poster={project.poster} category={project.category} title={project.title} summary={project.summary} outcome={project.outcome} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro eyebrow="How the work is built" title="Sharp story architecture. Lean production. Clean edits." copy="The process is intentionally direct so the work stays personal and the end result stays coherent." />
+    </div>
+  </section>
+
+  <FinalCta />
+</BaseLayout>
