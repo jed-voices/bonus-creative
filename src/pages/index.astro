@@ -45,11 +45,11 @@ import { site, services, projects } from '../data/site';
     <div class="container two-col">
       <div class="grid" style="gap:1rem;">
         <div class="eyebrow">Direct collaboration</div>
-        <h2>One filmmaker. One vision. Less drag between idea and final cut.</h2>
+        <h2>One filmmaker. Clear communication. Better work.</h2>
       </div>
       <div class="grid" style="gap:1rem;">
         <p>
-          Bonus Creative is built for teams that do not want a bloated process. Strategy, filming, editing, and delivery stay aligned because the story does not get handed from room to room.
+          Projects move faster when the story is not handed from room to room. Strategy, filming, editing, and delivery stay aligned because the same person is carrying the thread.
         </p>
         <div class="checklist">
           <div>Direct communication from first call to final delivery</div>
@@ -63,7 +63,7 @@ import { site, services, projects } from '../data/site';
 
   <section class="section">
     <div class="container">
-      <SectionIntro eyebrow="Featured work" title="Selected films with a clear point of view." copy="Real projects, direct access, and a stronger editorial feel than a generic production site." />
+      <SectionIntro eyebrow="Featured work" title="Different kinds of work. Same standard." copy="From mission-driven organizations to documentary projects and live events, each piece is built around clarity, restraint, and a point of view." />
       <div class="cards-3">
         {projects.map((project) => (
           <ProjectCard href={`/case-studies/${project.slug}/`} poster={project.poster} category={project.category} title={project.title} summary={project.summary} outcome={project.outcome} />
@@ -74,7 +74,7 @@ import { site, services, projects } from '../data/site';
 
   <section class="section">
     <div class="container">
-      <SectionIntro eyebrow="Services" title="Built for brands, nonprofits, churches, founders, and live events." copy="The offer stays focused so the positioning stays clear." />
+      <SectionIntro eyebrow="Services" title="What I actually help with." copy="The format changes. The job stays the same: find the point, make it feel human, and deliver something worth watching." />
       <div class="cards-3">
         {services.slice(0, 6).map((service) => (
           <div class="service-card">
@@ -90,9 +90,9 @@ import { site, services, projects } from '../data/site';
     <div class="container two-col">
       <div class="grid" style="gap:1rem;">
         <div class="eyebrow">About</div>
-        <h2>Oklahoma-rooted filmmaking with premium taste and a human process.</h2>
+        <h2>I built Bonus Creative to keep the story close to the person telling it.</h2>
         <p>
-          Bonus Creative is built around story clarity, visual restraint, and direct collaboration. The goal is simple: make work people actually feel and remember.
+          The fewer layers between the story and the storyteller, the better the work usually gets. That is the point of the model.
         </p>
         <div class="btn-row">
           <a class="btn btn-secondary" href="/about/">More About the Approach</a>
@@ -100,9 +100,9 @@ import { site, services, projects } from '../data/site';
       </div>
       <div class="panel founder-panel">
         <div class="founder-copy grid" style="gap:.75rem; width:100%; padding:1.25rem;">
-          <div class="kicker">Founder-led studio</div>
-          <strong>Award-winning writer, director, shooter, editor, and drone operator.</strong>
-          <p>Premium execution without agency bloat. Local context with national-level taste.</p>
+          <div class="kicker">Bo Wright</div>
+          <strong>Award-winning writer, director, and filmmaker.</strong>
+          <p>One line of sight from concept to final cut.</p>
         </div>
       </div>
     </div>
@@ -110,7 +110,7 @@ import { site, services, projects } from '../data/site';
 
   <section class="section">
     <div class="container">
-      <SectionIntro eyebrow="Testimonials" title="What clients should feel working with Bonus Creative." copy="Replace these with real client quotes as soon as they are available." />
+      <SectionIntro eyebrow="Testimonials" title="How the work is supposed to feel." copy="For now these are guiding lines from the studio. Swap in approved client quotes when they are ready." />
       <div class="cards-3">
         {site.testimonials.map((item) => (
           <QuoteBlock quote={item.quote} person={item.person} role={item.role} />
