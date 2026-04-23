@@ -5,8 +5,7 @@ import { site } from '@/lib/site';
 
 const geist = Geist({
   subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-geist'
+  display: 'swap'
 });
 
 export const metadata: Metadata = {
@@ -37,8 +36,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={geist.variable}>
-      <body className="bg-[#0A0A0A] font-sans text-[#F5F5F7] antialiased">{children}</body>
+    <html lang="en">
+      <body className={`${geist.className} bg-[#0A0A0A] text-[#F5F5F7] antialiased`}>{children}</body>
     </html>
   );
 }
