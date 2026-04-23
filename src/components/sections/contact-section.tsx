@@ -2,70 +2,83 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 import { Reveal } from '@/components/ui/reveal';
-import { site } from '@/lib/site';
+import { cleanPhone, home, site } from '@/lib/site';
+
+const contactHighlights = [
+  {
+    label: 'Email',
+    value: site.email,
+    href: `mailto:${site.email}`
+  },
+  {
+    label: 'Phone',
+    value: site.phone,
+    href: `tel:${cleanPhone}`
+  },
+  {
+    label: 'Coverage',
+    value: site.coverage,
+    href: ''
+  }
+] as const;
 
 export function ContactSection() {
   return (
     <section className="section-space">
       <Container>
-        <div className="col-span-12 grid gap-8 border-b border-white/10 pb-12 lg:grid-cols-12 lg:pb-16">
-          <div className="lg:col-span-8">
-            <Reveal>
-              <p className="eyebrow">Contact</p>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <h2 className="display-xl max-w-[10ch] text-[#F5F5F7]">Let&apos;s talk.</h2>
-            </Reveal>
-          </div>
-          <div className="space-y-8 lg:col-span-4 lg:pt-4">
-            <Reveal delay={0.08}>
-              <form className="space-y-4 rounded-[1.75rem] border border-white/10 bg-white/[0.02] p-6 md:p-7">
-                <div className="grid gap-2">
-                  <label htmlFor="name" className="eyebrow">Name</label>
-                  <input id="name" name="name" type="text" className="min-h-12 border-b border-white/10 bg-transparent px-0 py-3 text-[#F5F5F7] outline-none placeholder:text-[#86868B]" placeholder="Your name" />
-                </div>
-                <div className="grid gap-2">
-                  <label htmlFor="email" className="eyebrow">Email</label>
-                  <input id="email" name="email" type="email" className="min-h-12 border-b border-white/10 bg-transparent px-0 py-3 text-[#F5F5F7] outline-none placeholder:text-[#86868B]" placeholder="you@example.com" />
-                </div>
-                <div className="grid gap-2">
-                  <label htmlFor="project" className="eyebrow">Project</label>
-                  <textarea id="project" name="project" rows={4} className="border-b border-white/10 bg-transparent px-0 py-3 text-[#F5F5F7] outline-none placeholder:text-[#86868B]" placeholder="Tell me what you are building, launching, or trying to communicate." />
-                </div>
-                <button type="submit" className="inline-flex items-center gap-2 rounded-full border border-[#FF5C00] bg-[#FF5C00] px-5 py-3 text-sm text-[#0A0A0A] transition-colors hover:bg-[#ff7a2f] hover:border-[#ff7a2f]">
-                  <span>Start a conversation</span>
+        <Reveal className="col-span-12">
+          <div className="grid gap-8 rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(46,91,255,0.14),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(255,92,0,0.12),transparent_28%),rgba(255,255,255,0.03)] p-6 md:p-8 lg:grid-cols-12 lg:items-end">
+            <div className="space-y-4 lg:col-span-7">
+              <p className="eyebrow">{home.cta.eyebrow}</p>
+              <h2 className="display-lg max-w-[10ch] text-[#F5F5F7]">
+                {home.cta.title}
+              </h2>
+              <p className="body-lg max-w-2xl">
+                {home.cta.body}
+              </p>
+              <p className="body-sm max-w-xl text-[#B8B8BC]">
+                {site.contactMicrocopy}
+              </p>
+            </div>
+
+            <div className="space-y-6 lg:col-span-5">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                {contactHighlights.map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-[1.25rem] border border-white/10 bg-black/20 p-4"
+                  >
+                    <p className="eyebrow">{item.label}</p>
+                    {item.href ? (
+                      <Link
+                        href={item.href}
+                        className="mt-3 block text-sm text-[#F5F5F7] transition-colors hover:text-[#2E5BFF]"
+                      >
+                        {item.value}
+                      </Link>
+                    ) : (
+                      <p className="mt-3 text-sm text-[#F5F5F7]">{item.value}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href={home.cta.buttonHref}
+                  className="inline-flex items-center gap-2 rounded-full border border-[#FF5C00] bg-[#FF5C00] px-5 py-3 text-sm text-[#0A0A0A] transition-colors hover:border-[#ff7a2f] hover:bg-[#ff7a2f]"
+                >
+                  <span>{home.cta.buttonLabel}</span>
                   <ArrowUpRight size={16} />
-                </button>
-              </form>
-            </Reveal>
+                </Link>
+              </div>
+
+              <p className="body-sm max-w-md">
+                {home.cta.footer}
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="col-span-12 grid gap-6 pt-8 lg:grid-cols-12 lg:items-end lg:pt-10">
-          <Reveal className="lg:col-span-4">
-            <div className="space-y-2">
-              <p className="text-sm font-medium tracking-[-0.03em] text-[#F5F5F7]">{site.name}</p>
-              <p className="body-sm">{site.location}</p>
-            </div>
-          </Reveal>
-          <Reveal delay={0.03} className="lg:col-span-4">
-            <div className="space-y-2">
-              <Link href={`mailto:${site.email}`} className="text-sm text-[#F5F5F7] transition-colors hover:text-[#2E5BFF]">
-                {site.email}
-              </Link>
-              <p className="body-sm">{site.phone}</p>
-            </div>
-          </Reveal>
-          <Reveal delay={0.06} className="lg:col-span-4 lg:text-right">
-            <div className="flex flex-wrap gap-4 lg:justify-end">
-              <Link href={site.instagram} className="text-sm text-[#86868B] transition-colors hover:text-[#F5F5F7]" target="_blank" rel="noreferrer">
-                Instagram
-              </Link>
-              <Link href={site.youtube} className="text-sm text-[#86868B] transition-colors hover:text-[#F5F5F7]" target="_blank" rel="noreferrer">
-                YouTube
-              </Link>
-            </div>
-          </Reveal>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

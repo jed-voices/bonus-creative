@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 import { Reveal } from '@/components/ui/reveal';
-import { work } from '@/lib/site';
+import { home, work } from '@/lib/site';
 
 export function WorkGrid() {
   return (
@@ -11,10 +11,13 @@ export function WorkGrid() {
       <Container>
         <div className="col-span-12 mb-10 flex flex-col gap-4 lg:col-span-5">
           <Reveal>
-            <p className="eyebrow">Selected work</p>
+            <p className="eyebrow">{home.featuredWork.eyebrow}</p>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="display-lg max-w-[12ch]">Different kinds of work. Same standard.</h2>
+            <h2 className="display-lg max-w-[12ch]">{home.featuredWork.title}</h2>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <p className="body-lg max-w-2xl">{home.featuredWork.intro}</p>
           </Reveal>
         </div>
         <div className="col-span-12 grid gap-5 lg:grid-cols-12 lg:gap-6">
@@ -24,12 +27,7 @@ export function WorkGrid() {
               delay={0.06 * index}
               className={index === 0 ? 'lg:col-span-7' : index === 1 ? 'lg:col-span-5' : 'lg:col-span-6'}
             >
-              <Link
-                href={item.href}
-                className="group relative flex h-full min-h-[320px] flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.03]"
-                target={item.external ? '_blank' : undefined}
-                rel={item.external ? 'noreferrer' : undefined}
-              >
+              <article className="group relative flex h-full min-h-[320px] flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.03]">
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={item.poster}
@@ -56,12 +54,30 @@ export function WorkGrid() {
                     <h3 className="text-[1.35rem] font-medium tracking-[-0.04em] text-[#F5F5F7]">{item.title}</h3>
                     <p className="body-sm max-w-xl">{item.summary}</p>
                   </div>
-                  <div className="inline-flex items-center gap-2 text-sm text-[#F5F5F7]">
-                    <span>{item.linkLabel}</span>
-                    <ArrowUpRight size={16} className="text-[#2E5BFF]" />
+                  <div className="flex flex-wrap gap-3">
+                    <Link
+                      href={item.href}
+                      className="inline-flex items-center gap-2 rounded-full border border-[#2E5BFF] bg-[#2E5BFF] px-4 py-2 text-sm text-[#F5F5F7] transition-colors hover:border-[#1f47d9] hover:bg-[#1f47d9]"
+                      target={item.external ? '_blank' : undefined}
+                      rel={item.external ? 'noreferrer' : undefined}
+                    >
+                      <span>{item.linkLabel}</span>
+                      <ArrowUpRight size={16} />
+                    </Link>
+                    {item.secondaryHref ? (
+                      <Link
+                        href={item.secondaryHref}
+                        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-[#F5F5F7] transition-colors hover:border-white/20 hover:bg-white/[0.06]"
+                        target={item.secondaryExternal ? '_blank' : undefined}
+                        rel={item.secondaryExternal ? 'noreferrer' : undefined}
+                      >
+                        <span>{item.secondaryLabel}</span>
+                        <ArrowUpRight size={16} className="text-[#FF5C00]" />
+                      </Link>
+                    ) : null}
                   </div>
                 </div>
-              </Link>
+              </article>
             </Reveal>
           ))}
         </div>

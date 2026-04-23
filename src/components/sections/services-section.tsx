@@ -1,7 +1,8 @@
 import { Clapperboard, Film, Layers3, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 import { Container } from '@/components/ui/container';
 import { Reveal } from '@/components/ui/reveal';
-import { services } from '@/lib/site';
+import { home, services } from '@/lib/site';
 
 const icons = [Clapperboard, Film, Layers3, Sparkles] as const;
 
@@ -11,10 +12,13 @@ export function ServicesSection() {
       <Container>
         <div className="col-span-12 mb-10 flex flex-col gap-4 lg:col-span-5">
           <Reveal>
-            <p className="eyebrow">Services</p>
+            <p className="eyebrow">{home.servicesPreview.eyebrow}</p>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="display-lg max-w-[11ch]">Minimal language. High standards. A tighter production system.</h2>
+            <h2 className="display-lg max-w-[11ch]">{home.servicesPreview.title}</h2>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <p className="body-lg max-w-2xl">{home.servicesPreview.body}</p>
           </Reveal>
         </div>
         <div className="col-span-12 grid gap-4 md:grid-cols-2">
@@ -29,13 +33,22 @@ export function ServicesSection() {
                   </div>
                   <div className="space-y-3">
                     <h3 className="text-[1.5rem] font-medium tracking-[-0.04em] text-[#F5F5F7]">{service.title}</h3>
-                    <p className="body-sm max-w-[42ch]">{service.copy}</p>
+                    <p className="body-sm max-w-[42ch]">{service.summary}</p>
+                    <p className="body-sm max-w-[42ch] text-[#B8B8BC]">{service.body}</p>
                   </div>
                 </div>
               </Reveal>
             );
           })}
         </div>
+        <Reveal delay={0.16} className="col-span-12 pt-8">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 text-sm text-[#F5F5F7] transition-colors hover:text-[#2E5BFF]"
+          >
+            <span>See the full service list</span>
+          </Link>
+        </Reveal>
       </Container>
     </section>
   );
