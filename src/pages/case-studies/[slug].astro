@@ -18,6 +18,13 @@ const { project } = Astro.props;
       <div class="eyebrow">{project.category}</div>
       <h1>{project.title}</h1>
       <p>{project.summary}</p>
+      {project.externalUrl && (
+        <div class="btn-row">
+          <a class="btn btn-primary" href={project.externalUrl} target="_blank" rel="noreferrer">
+            {project.externalLabel || 'View Project'}
+          </a>
+        </div>
+      )}
     </div>
   </section>
 
