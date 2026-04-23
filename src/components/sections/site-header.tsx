@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { navigation } from '@/lib/site';
+import { navigation, site } from '@/lib/site';
 import { Container } from '@/components/ui/container';
 
 function isActive(pathname: string, href: string) {
@@ -36,7 +36,7 @@ export function SiteHeader() {
             href="/contact"
             className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-[#F5F5F7] transition-colors hover:border-white/20 hover:bg-white/[0.06]"
           >
-            Start a project
+            {site.hero.projectTitle}
           </Link>
         </div>
 
@@ -61,16 +61,6 @@ export function SiteHeader() {
               </Link>
             );
           })}
-          <Link
-            href="/reel"
-            className={`rounded-full px-3 py-2 text-sm transition-colors ${
-              isActive(currentPath, '/reel')
-                ? 'bg-white/10 text-[#F5F5F7]'
-                : 'text-[#86868B] hover:text-[#F5F5F7]'
-            }`}
-          >
-            Reel
-          </Link>
         </nav>
       </Container>
     </header>

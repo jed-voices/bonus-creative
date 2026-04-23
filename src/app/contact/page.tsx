@@ -8,7 +8,9 @@ import { Container } from '@/components/ui/container';
 import { Reveal } from '@/components/ui/reveal';
 
 export const metadata: Metadata = {
-  title: seo.contactTitle,
+  title: {
+    absolute: seo.contactTitle
+  },
   description: seo.contactDescription
 };
 

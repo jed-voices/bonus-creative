@@ -4,7 +4,8 @@ export const navigation = [
   { href: '/services', label: 'Services' },
   { href: '/about', label: 'About' },
   { href: '/case-studies', label: 'Case Studies' },
-  { href: '/contact', label: 'Contact' }
+  { href: '/contact', label: 'Contact' },
+  { href: '/reel', label: 'Reel' }
 ] as const;
 
 export const seo = {

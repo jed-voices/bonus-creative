@@ -1,8 +1,13 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { notFoundPage } from '@/lib/site';
 import { PageHero } from '@/components/sections/page-hero';
 import { Container } from '@/components/ui/container';
+
+export const metadata: Metadata = {
+  title: 'Page not found'
+};
 
 export default function NotFound() {
   return (
