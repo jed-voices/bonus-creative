@@ -61,11 +61,11 @@ export function HeroSection() {
               </video>
               <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 md:p-8">
                 <div className="max-w-md">
-                  <p className="eyebrow text-[#F5F5F7]">Showreel</p>
-                  <p className="mt-3 text-sm leading-6 text-[#F5F5F7]/72">Landscape-first highlight reel with a Swiss-style frame, minimal UI, and motion that lets the footage stay in charge.</p>
+                  <p className="eyebrow text-[#F5F5F7]">Reel</p>
+                  <p className="mt-3 text-sm leading-6 text-[#F5F5F7]/72">Story-first work across branded films, documentaries, mission stories, event coverage, and Oklahoma-rooted projects.</p>
                 </div>
                 <div className="hidden rounded-full border border-white/15 bg-black/40 px-4 py-2 text-sm text-[#F5F5F7] md:inline-flex">
-                  / 2025 reel
+                  / selected work
                 </div>
               </div>
             </div>
