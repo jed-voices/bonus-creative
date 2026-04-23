@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FinalCta from '../components/FinalCta.astro';
+import { services } from '../data/site';
+---
+<BaseLayout title="Services | Bonus Creative" description="Branded films, documentary storytelling, nonprofit films, church media, event coverage, and drone cinematography in Oklahoma." path="/services/">
+  <section class="page-hero">
+    <div class="container grid" style="gap:1rem; max-width:56rem;">
+      <div class="eyebrow">Services</div>
+      <h1>Story-first production for teams that need more than generic content.</h1>
+      <p>Each service is built around a client problem, not just a deliverable list. The work is designed to make the story clearer, the brand stronger, and the final asset more useful.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cards-2">
+      {services.map((service) => (
+        <div class="service-card">
+          <div class="kicker">{service.title}</div>
+          <strong>{service.summary}</strong>
+          <p>{service.body}</p>
+          <div class="checklist compact-checklist">
+            {service.deliverables.map((item) => <div>{item}</div>)}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <FinalCta />
+</BaseLayout>
