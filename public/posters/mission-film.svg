@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Mission film poster">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#15161a"/>
+      <stop offset="100%" stop-color="#0a0a0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <circle cx="930" cy="160" r="220" fill="#d8c38e" fill-opacity="0.22"/>
+  <rect x="80" y="90" width="420" height="570" fill="#1f2126"/>
+  <rect x="530" y="120" width="590" height="510" fill="none" stroke="rgba(255,255,255,.1)"/>
+  <text x="560" y="240" fill="#f3efe7" font-family="Georgia, serif" font-size="66">Stories that</text>
+  <text x="560" y="315" fill="#f3efe7" font-family="Georgia, serif" font-size="66">carry weight</text>
+  <text x="560" y="390" fill="#b7b0a4" font-family="Arial, sans-serif" font-size="24" letter-spacing="4">NONPROFIT FILM</text>
+  <text x="560" y="540" fill="#d8c38e" font-family="Arial, sans-serif" font-size="22" letter-spacing="3">PLACEHOLDER POSTER — REPLACE WITH REAL FRAME GRAB</text>
+</svg>
