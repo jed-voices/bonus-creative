@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../data/site';
+
+const cleanPhone = site.phone ? site.phone.replace(/[^\d]/g, '') : '';
 ---
 <BaseLayout title="Contact | Bonus Creative" description="Start a project with Bonus Creative." path="/contact/">
   <section class="page-hero">
@@ -62,18 +64,24 @@ import { site } from '../data/site';
       </div>
 
       <div class="contact-list">
-        <div class="contact-card">
-          <strong>Email</strong>
-          <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
-        </div>
-        <div class="contact-card">
-          <strong>Phone</strong>
-          <p><a href={`tel:${site.phone.replace(/[^\d]/g, '')}`}>{site.phone}</a></p>
-        </div>
-        <div class="contact-card">
-          <strong>Instagram</strong>
-          <p><a href={site.instagram} target="_blank" rel="noreferrer">Follow on Instagram</a></p>
-        </div>
+        {site.email && (
+          <div class="contact-card">
+            <strong>Email</strong>
+            <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+          </div>
+        )}
+        {cleanPhone && (
+          <div class="contact-card">
+            <strong>Phone</strong>
+            <p><a href={`tel:${cleanPhone}`}>{site.phone}</a></p>
+          </div>
+        )}
+        {site.instagram && (
+          <div class="contact-card">
+            <strong>Instagram</strong>
+            <p><a href={site.instagram} target="_blank" rel="noreferrer">Follow on Instagram</a></p>
+          </div>
+        )}
         <div class="contact-card">
           <strong>Coverage area</strong>
           <p>Oklahoma City, Oklahoma, and projects that travel well.</p>
