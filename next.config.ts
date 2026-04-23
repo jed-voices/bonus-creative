@@ -2,7 +2,8 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  distDir: '.next-build',
+  // Vercel expects the default `.next` output during deployment builds.
+  distDir: process.env.VERCEL ? '.next' : '.next-build',
   outputFileTracingRoot: process.cwd(),
   experimental: {
     optimizePackageImports: ['lucide-react']
