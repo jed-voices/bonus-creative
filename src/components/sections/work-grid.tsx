@@ -14,7 +14,7 @@ export function WorkGrid() {
             <p className="eyebrow">Selected work</p>
           </Reveal>
           <Reveal delay={0.05}>
-            <h2 className="display-lg max-w-[12ch]">A portfolio grid built to feel quiet, sharp, and cinematic.</h2>
+            <h2 className="display-lg max-w-[12ch]">Different kinds of work. Same standard.</h2>
           </Reveal>
         </div>
         <div className="col-span-12 grid gap-5 lg:grid-cols-12 lg:gap-6">
@@ -25,8 +25,10 @@ export function WorkGrid() {
               className={index === 0 ? 'lg:col-span-7' : index === 1 ? 'lg:col-span-5' : 'lg:col-span-6'}
             >
               <Link
-                href="/reel"
+                href={item.href}
                 className="group relative flex h-full min-h-[320px] flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.03]"
+                target={item.external ? '_blank' : undefined}
+                rel={item.external ? 'noreferrer' : undefined}
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
@@ -55,7 +57,7 @@ export function WorkGrid() {
                     <p className="body-sm max-w-xl">{item.summary}</p>
                   </div>
                   <div className="inline-flex items-center gap-2 text-sm text-[#F5F5F7]">
-                    <span>View motion</span>
+                    <span>{item.linkLabel}</span>
                     <ArrowUpRight size={16} className="text-[#2E5BFF]" />
                   </div>
                 </div>
