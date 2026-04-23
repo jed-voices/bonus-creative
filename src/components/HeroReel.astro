@@ -1,0 +1,26 @@
+---
+interface Props {
+  poster: string;
+  posterAlt?: string;
+  reelUrl?: string;
+}
+const {
+  poster,
+  posterAlt = 'Featured reel poster',
+  reelUrl
+} = Astro.props;
+const href = reelUrl && reelUrl.trim().length > 0 ? reelUrl : '/contact/';
+const label = reelUrl && reelUrl.trim().length > 0 ? 'Watch Reel' : 'Request Reel';
+const external = href.startsWith('http');
+---
+<div class="hero-film-frame">
+  <img src={poster} alt={posterAlt} width="960" height="1200" loading="eager" fetchpriority="high" />
+  <div class="hero-film-overlay"></div>
+  <div class="hero-film-ui">
+    <div class="hero-film-badge">Featured Reel</div>
+    <a class="play-button" href={href} target={external ? '_blank' : undefined} rel={external ? 'noreferrer' : undefined} aria-label={label}>
+      <span class="play-icon"></span>
+      <span>{label}</span>
+    </a>
+  </div>
+</div>
