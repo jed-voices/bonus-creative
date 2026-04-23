@@ -120,6 +120,53 @@ textarea {
   background: var(--line);
 }
 
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-offset, 28px), 0);
+  animation: reveal-in var(--reveal-duration, 0.7s) cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--reveal-delay, 0s);
+}
+
+.reveal-eager {
+  --reveal-offset: 18px;
+  --reveal-duration: 0.42s;
+}
+
+.magnetic-link {
+  transform: translate3d(0, 0, 0);
+  transition:
+    transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.magnetic-link:hover,
+.magnetic-link:focus-visible {
+  transform: translate3d(0, -2px, 0);
+}
+
+@keyframes reveal-in {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .magnetic-link {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 @media (max-width: 960px) {
   .grid-shell {
     width: min(calc(100% - 1.25rem), var(--max-width));
