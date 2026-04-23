@@ -26,6 +26,8 @@ const nav = [
   { href: '/case-studies/', label: 'Case Studies' },
   { href: '/contact/', label: 'Contact' }
 ];
+const sameAs = [site.instagram, site.vimeo, site.youtube].filter(Boolean);
+const cleanPhone = site.phone ? site.phone.replace(/[^\d]/g, '') : '';
 ---
 <html lang="en">
   <head>
@@ -55,9 +57,9 @@ const nav = [
       url: String(canonical.origin),
       areaServed: ['Oklahoma', 'Oklahoma City'],
       email: site.email,
-      telephone: site.phone,
+      ...(site.phone ? { telephone: site.phone } : {}),
       description,
-      sameAs: [site.instagram, site.vimeo, site.youtube],
+      ...(sameAs.length ? { sameAs } : {}),
       serviceType: [
         'Oklahoma video producer',
         'Oklahoma City video production',
@@ -102,9 +104,9 @@ const nav = [
           <a href="/contact/">Contact</a>
         </div>
         <div class="footer-links footer-links--right">
-          <a href={`mailto:${site.email}`}>{site.email}</a>
-          <a href={`tel:${site.phone.replace(/[^\d]/g, '')}`}>{site.phone}</a>
-          <a href={site.instagram} target="_blank" rel="noreferrer">Instagram</a>
+          {site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}
+          {cleanPhone && <a href={`tel:${cleanPhone}`}>{site.phone}</a>}
+          {site.instagram && <a href={site.instagram} target="_blank" rel="noreferrer">Instagram</a>}
         </div>
       </div>
     </footer>
