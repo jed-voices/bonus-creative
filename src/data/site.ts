@@ -7,10 +7,10 @@ export const site = {
   description:
     'Bonus Creative is a filmmaker-led studio in Oklahoma creating cinematic branded films, documentaries, nonprofit stories, church media, and event films with a lean, direct process.',
   email: 'hello@bonuscreative.com',
-  phone: '(405) 000-0000',
-  instagram: 'https://instagram.com/bonuscreative',
-  vimeo: 'https://vimeo.com/',
-  youtube: 'https://youtube.com/',
+  phone: '',
+  instagram: '',
+  vimeo: '',
+  youtube: '',
   hero: {
     eyebrow: 'Oklahoma video producer',
     title: 'Films with a clear point of view.',
@@ -31,18 +31,18 @@ export const site = {
   testimonials: [
     {
       quote: 'The process felt clear from the first conversation. Nothing got lost between idea and execution.',
-      person: 'Client quote placeholder',
-      role: 'Replace with real testimonial'
+      person: 'Client testimonial coming soon',
+      role: 'Replace with approved client name and title'
     },
     {
       quote: 'The final film looked premium, but it still felt honest and human.',
-      person: 'Client quote placeholder',
-      role: 'Replace with real testimonial'
+      person: 'Client testimonial coming soon',
+      role: 'Replace with approved client name and title'
     },
     {
       quote: 'Fast turnaround. Strong instincts. No wasted motion.',
-      person: 'Client quote placeholder',
-      role: 'Replace with real testimonial'
+      person: 'Client testimonial coming soon',
+      role: 'Replace with approved client name and title'
     }
   ]
 };
