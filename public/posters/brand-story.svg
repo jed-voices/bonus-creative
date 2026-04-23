@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Brand story poster">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0d0f14"/>
+      <stop offset="100%" stop-color="#17171a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <rect x="120" y="100" width="350" height="550" fill="#20242c"/>
+  <rect x="520" y="110" width="560" height="530" fill="none" stroke="rgba(255,255,255,.1)"/>
+  <circle cx="920" cy="190" r="160" fill="#8ea3b7" fill-opacity="0.24"/>
+  <text x="560" y="250" fill="#f3efe7" font-family="Georgia, serif" font-size="66">A brand with</text>
+  <text x="560" y="325" fill="#f3efe7" font-family="Georgia, serif" font-size="66">a pulse</text>
+  <text x="560" y="400" fill="#b7b0a4" font-family="Arial, sans-serif" font-size="24" letter-spacing="4">BRANDED FILM</text>
+  <text x="560" y="545" fill="#d8c38e" font-family="Arial, sans-serif" font-size="22" letter-spacing="3">REPLACE WITH REAL STILL OR POSTER FRAME</text>
+</svg>
