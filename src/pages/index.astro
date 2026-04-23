@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionIntro from '../components/SectionIntro.astro';
+import FinalCta from '../components/FinalCta.astro';
+import HeroReel from '../components/HeroReel.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import QuoteBlock from '../components/QuoteBlock.astro';
+import { site, services, projects } from '../data/site';
+---
+<BaseLayout title="Bonus Creative | Oklahoma Video Producer" description={site.description} path="/">
+  <section class="hero hero-premium">
+    <div class="container hero-grid">
+      <div class="hero-copy grid" style="gap:1.25rem;">
+        <div class="eyebrow">{site.hero.eyebrow}</div>
+        <h1>{site.hero.title}</h1>
+        <p>{site.hero.copy}</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="/work/">View Work</a>
+          <a class="btn btn-secondary" href="/contact/">Start a Project</a>
+        </div>
+        <div class="hero-proof-row">
+          {site.metrics.slice(0, 3).map((item) => (
+            <div>
+              <strong>{item.label}</strong>
+              <span>{item.value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="hero-visual-stack">
+        <HeroReel poster={site.hero.poster} posterAlt={site.hero.reelTitle} reelUrl={site.hero.videoUrl} />
+      </div>
+    </div>
+    <div class="container trust-strip">
+      {site.metrics.map((item) => (
+        <div class="stat-card">
+          <strong>{item.label}</strong>
+          <p>{item.value}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div class="grid" style="gap:1rem;">
+        <div class="eyebrow">Direct collaboration</div>
+        <h2>One filmmaker. One vision. Less drag between idea and final cut.</h2>
+      </div>
+      <div class="grid" style="gap:1rem;">
+        <p>
+          Bonus Creative is built for teams that do not want a bloated process. Strategy, filming, editing, and delivery stay aligned because the story does not get handed from room to room.
+        </p>
+        <div class="checklist">
+          <div>Direct communication from first call to final delivery</div>
+          <div>Consistent visual language across concept, production, and edit</div>
+          <div>Lean turnaround with fewer handoffs and clearer decisions</div>
+          <div>Story-first work that feels cinematic without becoming overbuilt</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro eyebrow="Featured work" title="Selected films with a clear point of view." copy="Real projects, direct access, and a stronger editorial feel than a generic production site." />
+      <div class="cards-3">
+        {projects.map((project) => (
+          <ProjectCard href={`/case-studies/${project.slug}/`} poster={project.poster} category={project.category} title={project.title} summary={project.summary} outcome={project.outcome} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro eyebrow="Services" title="Built for brands, nonprofits, churches, founders, and live events." copy="The offer stays focused so the positioning stays clear." />
+      <div class="cards-3">
+        {services.slice(0, 6).map((service) => (
+          <div class="service-card">
+            <strong>{service.title}</strong>
+            <p>{service.summary}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div class="grid" style="gap:1rem;">
+        <div class="eyebrow">About</div>
+        <h2>Oklahoma-rooted filmmaking with premium taste and a human process.</h2>
+        <p>
+          Bonus Creative is built around story clarity, visual restraint, and direct collaboration. The goal is simple: make work people actually feel and remember.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-secondary" href="/about/">More About the Approach</a>
+        </div>
+      </div>
+      <div class="panel founder-panel">
+        <div class="founder-copy grid" style="gap:.75rem; width:100%; padding:1.25rem;">
+          <div class="kicker">Founder-led studio</div>
+          <strong>Award-winning writer, director, shooter, editor, and drone operator.</strong>
+          <p>Premium execution without agency bloat. Local context with national-level taste.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionIntro eyebrow="Testimonials" title="What clients should feel working with Bonus Creative." copy="Replace these with real client quotes as soon as they are available." />
+      <div class="cards-3">
+        {site.testimonials.map((item) => (
+          <QuoteBlock quote={item.quote} person={item.person} role={item.role} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FinalCta />
+</BaseLayout>
