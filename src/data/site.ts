@@ -23,7 +23,7 @@ export const site = {
     reelTitle: 'Bo Wright demo reel',
     reelLabel: 'Story-first work across branded films, mission stories, event coverage, and documentary-style projects.',
     poster: '/posters/reel-poster.svg',
-    videoUrl: ''
+    videoUrl: '/reel/'
   },
   metrics: [
     { label: 'Direct collaboration', value: 'One filmmaker from first call to final cut' },
