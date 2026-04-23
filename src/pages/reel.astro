@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+
+const reelPath = '/reel/2025_bo_wright_demo_reel_v1_1080p.mp4';
+---
+<BaseLayout title="Reel | Bonus Creative" description="Watch the Bo Wright demo reel." path="/reel/" image={site.hero.poster}>
+  <section class="page-hero">
+    <div class="container grid" style="gap:1rem; max-width:56rem;">
+      <div class="eyebrow">Reel</div>
+      <h1>{site.hero.reelTitle}</h1>
+      <p>{site.hero.reelLabel}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid" style="gap:1rem;">
+      <video controls preload="metadata" playsinline poster={site.hero.poster} style="width:100%; height:auto; border:1px solid rgba(255,255,255,0.08); background:#0b0b0d; box-shadow:0 24px 80px rgba(0,0,0,0.24);">
+        <source src={reelPath} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <p class="small-note">If the reel does not appear yet, upload the mp4 file to <code>public/reel/2025_bo_wright_demo_reel_v1_1080p.mp4</code> in the repository.</p>
+    </div>
+  </section>
+</BaseLayout>
