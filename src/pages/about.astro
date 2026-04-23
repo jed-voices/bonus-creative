@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FinalCta from '../components/FinalCta.astro';
+import { site } from '../data/site';
+---
+<BaseLayout title="About | Bonus Creative" description="About Bonus Creative, an Oklahoma-based filmmaker-led studio focused on cinematic branded films, nonprofit storytelling, and event films." path="/about/">
+  <section class="page-hero">
+    <div class="container grid" style="gap:1rem; max-width:56rem;">
+      <div class="eyebrow">About</div>
+      <h1>A filmmaker-led studio built around direct collaboration and strong story instincts.</h1>
+      <p>Bonus Creative exists for clients who want premium work without a bloated process. The model is simple: one filmmaker, one point of view, and a cleaner path from concept to final cut.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div class="panel founder-panel">
+        <div class="founder-copy grid" style="gap:.75rem; width:100%; padding:1.25rem;">
+          <div class="kicker">Founder portrait</div>
+          <strong>Replace this panel with a real portrait as soon as it is available.</strong>
+          <p class="small-note">Use a cinematic vertical image with strong contrast and restrained color.</p>
+        </div>
+      </div>
+      <div class="grid" style="gap:1rem;">
+        <h2>Story first. Visuals with restraint. Process without drag.</h2>
+        <p>Bonus Creative is shaped for nonprofits, brands, churches, founders, and event teams that need a film to do real work. The process stays direct so the final piece stays coherent.</p>
+        <div class="checklist">
+          <div>Award-winning writer, director, shooter, and editor</div>
+          <div>FAA-certified drone operator when aerials add real value</div>
+          <div>Oklahoma-rooted with a premium editorial sensibility</div>
+          <div>Built for direct communication and lean execution</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cards-2">
+      <div class="panel">
+        <div class="grid" style="gap:.85rem;">
+          <div class="eyebrow">Who it is for</div>
+          <h3>Best fit clients</h3>
+          <p>Mission-driven organizations, churches, founders, brands, conferences, and teams that care about story quality, visual taste, and efficient communication.</p>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="grid" style="gap:.85rem;">
+          <div class="eyebrow">Why clients choose this model</div>
+          <h3>Fewer handoffs. Cleaner decisions.</h3>
+          <p>Working directly with one filmmaker protects the emotional logic of the project. The story feels more intact because it never gets diluted by committee.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCta />
+</BaseLayout>
