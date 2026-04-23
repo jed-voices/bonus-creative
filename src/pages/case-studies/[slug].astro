@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FinalCta from '../../components/FinalCta.astro';
+import { projects } from '../../data/site';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project }
+  }));
+}
+
+const { project } = Astro.props;
+---
+<BaseLayout title={`${project.title} | Bonus Creative`} description={project.summary} path={`/case-studies/${project.slug}/`} image={project.poster}>
+  <section class="page-hero">
+    <div class="container grid" style="gap:1rem; max-width:56rem;">
+      <div class="eyebrow">{project.category}</div>
+      <h1>{project.title}</h1>
+      <p>{project.summary}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid" style="gap:1.5rem;">
+      <img class="case-hero-image" src={project.poster} alt={project.title} width="1400" height="875" />
+      <div class="cards-2">
+        <div class="case-card">
+          <div class="kicker">Client need</div>
+          <strong>{project.challenge}</strong>
+          <p>The project needed more than coverage. It needed a film that could clarify value and hold attention.</p>
+        </div>
+        <div class="case-card">
+          <div class="kicker">Creative approach</div>
+          <strong>{project.approach}</strong>
+          <p>{project.role}</p>
+        </div>
+        <div class="case-card">
+          <div class="kicker">Execution</div>
+          <strong>Lean production with editorial discipline.</strong>
+          <p>The work is planned with the final edit in mind so the footage is useful, not just impressive.</p>
+        </div>
+        <div class="case-card">
+          <div class="kicker">Result</div>
+          <strong>{project.outcome}</strong>
+          <p>{project.result}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FinalCta />
+</BaseLayout>
