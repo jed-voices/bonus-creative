@@ -1,0 +1,13 @@
+---
+interface Props {
+  quote: string;
+  person: string;
+  role?: string;
+}
+const { quote, person, role } = Astro.props;
+---
+<div class="quote-card">
+  <strong>“{quote}”</strong>
+  <p>{person}</p>
+  {role && <p class="small-note">{role}</p>}
+</div>
