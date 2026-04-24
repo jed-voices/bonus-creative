@@ -31,10 +31,10 @@ export function FinalCta({
     <section className="section-space">
       <Container>
         <Reveal className="col-span-12">
-          <div className="grid gap-8 rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(46,91,255,0.16),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(255,92,0,0.12),transparent_32%),rgba(255,255,255,0.03)] p-6 md:p-8 lg:grid-cols-12 lg:items-end">
+          <div className="grid gap-8 rounded-[2rem] border border-[var(--line)] bg-[radial-gradient(circle_at_top_left,rgba(107,183,166,0.2),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(217,138,82,0.14),transparent_32%),rgba(243,239,231,0.03)] p-6 md:p-8 lg:grid-cols-12 lg:items-end">
             <div className="space-y-4 lg:col-span-7">
               <p className="eyebrow">{eyebrow}</p>
-              <h2 className="display-lg max-w-[11ch] text-[#F5F5F7]">
+              <h2 className="display-lg max-w-[11ch] text-[var(--foreground)]">
                 {title}
               </h2>
               <p className="body-lg max-w-2xl">
@@ -46,7 +46,7 @@ export function FinalCta({
               <div className="flex flex-wrap gap-3">
                 <Link
                   href={buttonHref}
-                  className="inline-flex items-center gap-2 rounded-full border border-[#FF5C00] bg-[#FF5C00] px-5 py-3 text-sm text-[#0A0A0A] transition-colors hover:border-[#ff7a2f] hover:bg-[#ff7a2f]"
+                  className="inline-flex items-center gap-2 rounded-full border border-[var(--action)] bg-[var(--action)] px-5 py-3 text-sm text-[var(--background)] transition-colors hover:border-[var(--action-strong)] hover:bg-[var(--action-strong)]"
                 >
                   <span>{buttonLabel}</span>
                   <ArrowUpRight size={16} />
@@ -54,7 +54,7 @@ export function FinalCta({
                 {hasSecondaryAction ? (
                   <Link
                     href={secondaryHref}
-                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-3 text-sm text-[#F5F5F7] transition-colors hover:border-white/20 hover:bg-white/[0.06]"
+                    className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--surface)] px-5 py-3 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--line-strong)] hover:bg-[var(--surface-hover)]"
                   >
                     <span>{secondaryLabel}</span>
                     <ArrowUpRight size={16} />

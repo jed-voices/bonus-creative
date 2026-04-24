@@ -47,16 +47,16 @@ export function ContactForm() {
   }
 
   const fieldClassName =
-    'min-h-12 rounded-[1rem] border border-white/10 bg-black/20 px-4 py-3 text-[#F5F5F7] outline-none transition placeholder:text-[#86868B] focus:border-[#2E5BFF]';
+    'min-h-12 rounded-[1rem] border border-[var(--line)] bg-[var(--panel)] px-4 py-3 text-[var(--foreground)] outline-none transition placeholder:text-[var(--muted)] focus:border-[var(--accent)]';
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-4 rounded-[1.75rem] border border-white/10 bg-white/[0.02] p-6 md:p-7"
+      className="space-y-4 rounded-[1.75rem] border border-[var(--line)] bg-[var(--surface-quiet)] p-6 md:p-7"
     >
       <div className="space-y-3">
         <p className="eyebrow">Form</p>
-        <p className="body-sm max-w-2xl text-[#F5F5F7]">{contactPage.formIntro}</p>
+        <p className="body-sm max-w-2xl text-[var(--foreground)]">{contactPage.formIntro}</p>
         <p className="body-sm max-w-2xl">{site.contactMicrocopy}</p>
       </div>
 
@@ -171,7 +171,7 @@ export function ContactForm() {
       <div className="space-y-3" aria-live="polite">
         <button
           type="submit"
-          className="inline-flex items-center gap-2 rounded-full border border-[#FF5C00] bg-[#FF5C00] px-5 py-3 text-sm text-[#0A0A0A] transition-colors hover:border-[#ff7a2f] hover:bg-[#ff7a2f]"
+          className="inline-flex items-center gap-2 rounded-full border border-[var(--action)] bg-[var(--action)] px-5 py-3 text-sm text-[var(--background)] transition-colors hover:border-[var(--action-strong)] hover:bg-[var(--action-strong)]"
         >
           <span>{contactPage.submitLabel}</span>
           <ArrowUpRight size={16} />
@@ -179,7 +179,7 @@ export function ContactForm() {
         <p className="body-sm">
           {contactPage.formHandoff}
         </p>
-        {status ? <p className="body-sm text-[#F5F5F7]">{status}</p> : null}
+        {status ? <p className="body-sm text-[var(--foreground)]">{status}</p> : null}
       </div>
     </form>
   );

@@ -13,8 +13,8 @@ export function MagneticButton({ href, children, variant = 'primary' }: Magnetic
     'magnetic-link group inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm tracking-[-0.02em] transition-colors';
   const styles =
     variant === 'primary'
-      ? 'border-[#2E5BFF] bg-[#2E5BFF] text-[#F5F5F7] hover:bg-[#1f47d9] hover:border-[#1f47d9]'
-      : 'border-white/10 bg-white/[0.03] text-[#F5F5F7] hover:border-white/20 hover:bg-white/[0.06]';
+      ? 'border-[var(--accent)] bg-[var(--accent)] text-[var(--foreground)] hover:bg-[var(--accent-strong)] hover:border-[var(--accent-strong)]'
+      : 'border-[var(--line)] bg-[var(--surface)] text-[var(--foreground)] hover:border-[var(--line-strong)] hover:bg-[var(--surface-hover)]';
 
   return (
     <Link href={href} className={`${base} ${styles}`}>

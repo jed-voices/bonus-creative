@@ -5,14 +5,14 @@ import { MagneticButton } from '@/components/ui/magnetic-button';
 
 export function HeroSection() {
   return (
-    <section className="section-space relative overflow-hidden border-b border-white/10">
+    <section className="section-space relative overflow-hidden border-b border-[var(--line)]">
       <Container className="items-end">
         <div className="col-span-12 flex flex-col gap-6 lg:col-span-4 lg:pb-6">
           <Reveal eager>
             <p className="eyebrow">{site.hero.eyebrow}</p>
           </Reveal>
           <Reveal eager delay={0.05}>
-            <h1 className="display-xl max-w-[8ch] text-[#F5F5F7]">{site.hero.title}</h1>
+            <h1 className="display-xl max-w-[8ch] text-[var(--foreground)]">{site.hero.title}</h1>
           </Reveal>
           <Reveal eager delay={0.1}>
             <p className="body-lg max-w-xl">{site.hero.description}</p>
@@ -28,7 +28,7 @@ export function HeroSection() {
           <Reveal eager delay={0.2}>
             <div className="grid gap-3 pt-6 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
               {site.proof.map((item) => (
-                <div key={item} className="border-t border-white/10 pt-3 text-sm text-[#86868B]">
+                <div key={item} className="border-t border-[var(--line)] pt-3 text-sm text-[var(--muted)]">
                   {item}
                 </div>
               ))}
@@ -38,8 +38,8 @@ export function HeroSection() {
 
         <div className="col-span-12 lg:col-span-8">
           <Reveal eager delay={0.08}>
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] shadow-[0_20px_100px_rgba(0,0,0,0.45)]">
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.04),rgba(10,10,10,0.42))]" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--surface)] shadow-[0_24px_100px_rgba(2,6,9,0.45)]">
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,17,22,0.06),rgba(12,17,22,0.48))]" />
               <video
                 className="aspect-[16/9] w-full object-cover"
                 autoPlay
@@ -53,10 +53,10 @@ export function HeroSection() {
               </video>
               <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 md:p-8">
                 <div className="max-w-md">
-                  <p className="eyebrow text-[#F5F5F7]">{site.reel.title}</p>
-                  <p className="mt-3 text-sm leading-6 text-[#F5F5F7]/72">{site.hero.reelLabel}</p>
+                  <p className="eyebrow text-[var(--foreground)]">{site.reel.title}</p>
+                  <p className="mt-3 text-sm leading-6 text-[var(--foreground-soft)]">{site.hero.reelLabel}</p>
                 </div>
-                <div className="hidden rounded-full border border-white/15 bg-black/40 px-4 py-2 text-sm text-[#F5F5F7] md:inline-flex">
+                <div className="hidden rounded-full border border-[var(--line)] bg-[var(--panel)] px-4 py-2 text-sm text-[var(--foreground-soft)] md:inline-flex">
                   / selected work
                 </div>
               </div>

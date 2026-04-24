@@ -7,7 +7,7 @@ import { home, work } from '@/lib/site';
 
 export function WorkGrid() {
   return (
-    <section className="section-space border-b border-white/10">
+    <section className="section-space border-b border-[var(--line)]">
       <Container>
         <div className="col-span-12 mb-10 flex flex-col gap-4 lg:col-span-5">
           <Reveal>
@@ -27,7 +27,7 @@ export function WorkGrid() {
               delay={0.06 * index}
               className={index === 0 ? 'lg:col-span-7' : index === 1 ? 'lg:col-span-5' : 'lg:col-span-6'}
             >
-              <article className="group relative flex h-full min-h-[320px] flex-col overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.03]">
+              <article className="group relative flex h-full min-h-[320px] flex-col overflow-hidden rounded-[1.75rem] border border-[var(--line)] bg-[var(--surface)]">
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src={item.poster}
@@ -46,18 +46,18 @@ export function WorkGrid() {
                   >
                     <source src={item.previewVideo} type="video/mp4" />
                   </video>
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/70" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,17,22,0.08),rgba(12,17,22,0.22),rgba(12,17,22,0.74))]" />
                 </div>
                 <div className="flex flex-1 flex-col justify-between gap-6 p-5 md:p-6">
                   <div className="space-y-3">
                     <p className="eyebrow">{item.category}</p>
-                    <h3 className="text-[1.35rem] font-medium tracking-[-0.04em] text-[#F5F5F7]">{item.title}</h3>
+                    <h3 className="text-[1.35rem] font-medium tracking-[-0.04em] text-[var(--foreground)]">{item.title}</h3>
                     <p className="body-sm max-w-xl">{item.summary}</p>
                   </div>
                   <div className="flex flex-wrap gap-3">
                     <Link
                       href={item.href}
-                      className="inline-flex items-center gap-2 rounded-full border border-[#2E5BFF] bg-[#2E5BFF] px-4 py-2 text-sm text-[#F5F5F7] transition-colors hover:border-[#1f47d9] hover:bg-[#1f47d9]"
+                      className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)] bg-[var(--accent)] px-4 py-2 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--accent-strong)] hover:bg-[var(--accent-strong)]"
                       target={item.external ? '_blank' : undefined}
                       rel={item.external ? 'noreferrer' : undefined}
                     >
@@ -67,12 +67,12 @@ export function WorkGrid() {
                     {item.secondaryHref ? (
                       <Link
                         href={item.secondaryHref}
-                        className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-[#F5F5F7] transition-colors hover:border-white/20 hover:bg-white/[0.06]"
+                        className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--line-strong)] hover:bg-[var(--surface-hover)]"
                         target={item.secondaryExternal ? '_blank' : undefined}
                         rel={item.secondaryExternal ? 'noreferrer' : undefined}
                       >
                         <span>{item.secondaryLabel}</span>
-                        <ArrowUpRight size={16} className="text-[#FF5C00]" />
+                        <ArrowUpRight size={16} className="text-[var(--action)]" />
                       </Link>
                     ) : null}
                   </div>

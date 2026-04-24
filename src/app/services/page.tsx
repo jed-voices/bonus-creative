@@ -20,15 +20,15 @@ export default function ServicesPage() {
         copy={servicesPage.copy}
       />
 
-      <section className="section-space border-b border-white/10">
+      <section className="section-space border-b border-[var(--line)]">
         <Container>
           <div className="col-span-12 grid gap-4 md:grid-cols-2">
             {services.map((service, index) => (
               <Reveal key={service.slug} delay={0.04 * index}>
-                <article className="flex h-full flex-col gap-6 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 md:p-8">
+                <article className="flex h-full flex-col gap-6 rounded-[1.75rem] border border-[var(--line)] bg-[var(--surface)] p-6 md:p-8">
                   <div className="space-y-3">
                     <p className="eyebrow">{service.title}</p>
-                    <h2 className="text-[1.7rem] font-medium tracking-[-0.04em] text-[#F5F5F7]">
+                    <h2 className="text-[1.7rem] font-medium tracking-[-0.04em] text-[var(--foreground)]">
                       {service.summary}
                     </h2>
                     <p className="body-sm">{service.body}</p>

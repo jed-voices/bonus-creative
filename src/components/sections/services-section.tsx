@@ -8,7 +8,7 @@ const icons = [Clapperboard, Film, Layers3, Sparkles] as const;
 
 export function ServicesSection() {
   return (
-    <section className="section-space border-b border-white/10">
+    <section className="section-space border-b border-[var(--line)]">
       <Container>
         <div className="col-span-12 mb-10 flex flex-col gap-4 lg:col-span-5">
           <Reveal>
@@ -26,15 +26,15 @@ export function ServicesSection() {
             const Icon = icons[index % icons.length];
             return (
               <Reveal key={service.title} delay={0.06 * index}>
-                <div className="flex h-full flex-col gap-10 rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-6 md:p-8">
+                <div className="flex h-full flex-col gap-10 rounded-[1.5rem] border border-[var(--line)] bg-[var(--surface-quiet)] p-6 md:p-8">
                   <div className="flex items-center justify-between gap-3">
                     <p className="eyebrow">0{index + 1}</p>
-                    <Icon className="h-5 w-5 text-[#2E5BFF]" strokeWidth={1.75} />
+                    <Icon className="h-5 w-5 text-[var(--accent)]" strokeWidth={1.75} />
                   </div>
                   <div className="space-y-3">
-                    <h3 className="text-[1.5rem] font-medium tracking-[-0.04em] text-[#F5F5F7]">{service.title}</h3>
+                    <h3 className="text-[1.5rem] font-medium tracking-[-0.04em] text-[var(--foreground)]">{service.title}</h3>
                     <p className="body-sm max-w-[42ch]">{service.summary}</p>
-                    <p className="body-sm max-w-[42ch] text-[#B8B8BC]">{service.body}</p>
+                    <p className="body-sm max-w-[42ch] text-[var(--foreground-soft)]">{service.body}</p>
                   </div>
                 </div>
               </Reveal>
@@ -44,7 +44,7 @@ export function ServicesSection() {
         <Reveal delay={0.16} className="col-span-12 pt-8">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-sm text-[#F5F5F7] transition-colors hover:text-[#2E5BFF]"
+            className="inline-flex items-center gap-2 text-sm text-[var(--foreground)] transition-colors hover:text-[var(--accent)]"
           >
             <span>See the full service list</span>
           </Link>

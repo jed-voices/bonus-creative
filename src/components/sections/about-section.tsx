@@ -4,7 +4,7 @@ import { about, home, site } from '@/lib/site';
 
 export function AboutSection() {
   return (
-    <section className="section-space border-b border-white/10">
+    <section className="section-space border-b border-[var(--line)]">
       <Container>
         <div className="col-span-12 flex flex-col gap-6 lg:col-span-5">
           <Reveal>
@@ -19,16 +19,16 @@ export function AboutSection() {
             <p className="body-lg max-w-[56ch]">{home.intro.body}</p>
           </Reveal>
           <Reveal delay={0.12}>
-            <div className="flex h-full min-h-[320px] flex-col justify-between rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 md:p-8">
+            <div className="flex h-full min-h-[320px] flex-col justify-between rounded-[1.75rem] border border-[var(--line)] bg-[linear-gradient(135deg,rgba(107,183,166,0.14),rgba(243,239,231,0.03)_52%,rgba(217,138,82,0.08))] p-6 md:p-8">
               <div className="space-y-3">
                 <p className="eyebrow">{about.notesTitle}</p>
-                <div className="text-[2rem] font-medium tracking-[-0.06em] text-[#F5F5F7] md:text-[3rem]">BW</div>
+                <div className="text-[2rem] font-medium tracking-[-0.06em] text-[var(--foreground)] md:text-[3rem]">BW</div>
                 <div>
-                  <p className="text-lg font-medium tracking-[-0.03em] text-[#F5F5F7]">{site.founder.name}</p>
+                  <p className="text-lg font-medium tracking-[-0.03em] text-[var(--foreground)]">{site.founder.name}</p>
                   <p className="body-sm">{site.founder.title}</p>
                 </div>
               </div>
-              <div className="space-y-3 border-t border-white/10 pt-5">
+              <div className="space-y-3 border-t border-[var(--line)] pt-5">
                 {about.notes.map((note) => (
                   <p key={note} className="body-sm">{note}</p>
                 ))}

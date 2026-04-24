@@ -21,7 +21,7 @@ export default function CaseStudiesPage() {
         copy="Each case study shows the client need, the creative approach, the production logic, and the practical result."
       />
 
-      <section className="section-space border-b border-white/10">
+      <section className="section-space border-b border-[var(--line)]">
         <Container>
           <div className="col-span-12 mb-10 lg:col-span-5">
             <SectionIntro

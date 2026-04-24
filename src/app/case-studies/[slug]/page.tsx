@@ -61,7 +61,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               href={project.externalUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[#2E5BFF] bg-[#2E5BFF] px-5 py-3 text-sm text-[#F5F5F7] transition-colors hover:border-[#1f47d9] hover:bg-[#1f47d9]"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)] bg-[var(--accent)] px-5 py-3 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--accent-strong)] hover:bg-[var(--accent-strong)]"
             >
               <span>{project.externalLabel || 'View project'}</span>
               <ArrowUpRight size={16} />
@@ -70,11 +70,11 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         ) : null}
       </PageHero>
 
-      <section className="section-space border-b border-white/10">
+      <section className="section-space border-b border-[var(--line)]">
         <Container>
           <div className="col-span-12 grid gap-6">
             <Reveal>
-              <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--surface)]">
                 <Image
                   src={project.poster}
                   alt={project.title}
@@ -88,9 +88,9 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
             <div className="grid gap-4 md:grid-cols-2">
               <Reveal>
-                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-6">
+                <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--surface-quiet)] p-6">
                   <p className="eyebrow">Client need</p>
-                  <h2 className="mt-3 text-[1.5rem] font-medium tracking-[-0.04em] text-[#F5F5F7]">
+                  <h2 className="mt-3 text-[1.5rem] font-medium tracking-[-0.04em] text-[var(--foreground)]">
                     {project.challenge}
                   </h2>
                   <p className="body-sm mt-3">
@@ -101,9 +101,9 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </Reveal>
 
               <Reveal delay={0.04}>
-                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-6">
+                <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--surface-quiet)] p-6">
                   <p className="eyebrow">Creative approach</p>
-                  <h2 className="mt-3 text-[1.5rem] font-medium tracking-[-0.04em] text-[#F5F5F7]">
+                  <h2 className="mt-3 text-[1.5rem] font-medium tracking-[-0.04em] text-[var(--foreground)]">
                     {project.approach}
                   </h2>
                   <p className="body-sm mt-3">{project.role}</p>
@@ -111,9 +111,9 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </Reveal>
 
               <Reveal delay={0.08}>
-                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-6">
+                <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--surface-quiet)] p-6">
                   <p className="eyebrow">Execution</p>
-                  <h2 className="mt-3 text-[1.5rem] font-medium tracking-[-0.04em] text-[#F5F5F7]">
+                  <h2 className="mt-3 text-[1.5rem] font-medium tracking-[-0.04em] text-[var(--foreground)]">
                     Lean production with editorial discipline.
                   </h2>
                   <p className="body-sm mt-3">
@@ -124,9 +124,9 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </Reveal>
 
               <Reveal delay={0.12}>
-                <div className="rounded-[1.5rem] border border-white/10 bg-[radial-gradient(circle_at_top_left,rgba(46,91,255,0.14),transparent_36%),rgba(255,255,255,0.03)] p-6">
+                <div className="rounded-[1.5rem] border border-[var(--line)] bg-[radial-gradient(circle_at_top_left,rgba(107,183,166,0.18),transparent_36%),rgba(243,239,231,0.03)] p-6">
                   <p className="eyebrow">Result</p>
-                  <h2 className="mt-3 text-[1.5rem] font-medium tracking-[-0.04em] text-[#F5F5F7]">
+                  <h2 className="mt-3 text-[1.5rem] font-medium tracking-[-0.04em] text-[var(--foreground)]">
                     {project.outcome}
                   </h2>
                   <p className="body-sm mt-3">{project.result}</p>

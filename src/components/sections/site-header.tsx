@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { navigation, site } from '@/lib/site';
+import { BrandLogo } from '@/components/ui/brand-logo';
 import { Container } from '@/components/ui/container';
 
 function isActive(pathname: string, href: string) {
@@ -18,30 +19,25 @@ export function SiteHeader() {
   const currentPath = pathname ?? '/';
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0A0A0A]/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--background-frost)] backdrop-blur-xl">
       <Container className="items-center gap-y-4 py-4">
         <div className="col-span-3 md:col-span-2 lg:col-span-3">
-          <Link href="/" className="flex w-fit flex-col text-[#F5F5F7]">
-            <span className="text-[0.7rem] uppercase tracking-[0.22em] text-[#86868B]">
-              Bonus
-            </span>
-            <span className="text-sm font-medium tracking-[-0.03em]">
-              Creative
-            </span>
+          <Link href="/" className="block w-fit" aria-label={site.name}>
+            <BrandLogo priority />
           </Link>
         </div>
 
         <div className="col-span-3 flex justify-end md:col-span-4 lg:col-span-3 lg:order-3">
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-[#F5F5F7] transition-colors hover:border-white/20 hover:bg-white/[0.06]"
+            className="inline-flex items-center rounded-full border border-[var(--line)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--line-strong)] hover:bg-[var(--surface-hover)]"
           >
             {site.hero.projectTitle}
           </Link>
         </div>
 
         <nav
-          className="col-span-12 order-3 flex flex-wrap items-center gap-2 rounded-[1.25rem] border border-white/10 bg-white/[0.03] p-2 md:order-2 md:col-span-12 lg:col-span-6 lg:justify-center"
+          className="col-span-12 order-3 flex flex-wrap items-center gap-2 rounded-[1.25rem] border border-[var(--line)] bg-[var(--surface)] p-2 md:order-2 md:col-span-12 lg:col-span-6 lg:justify-center"
           aria-label="Primary"
         >
           {navigation.map((item) => {
@@ -53,8 +49,8 @@ export function SiteHeader() {
                 href={item.href}
                 className={`rounded-full px-3 py-2 text-sm transition-colors ${
                   active
-                    ? 'bg-white/10 text-[#F5F5F7]'
-                    : 'text-[#86868B] hover:text-[#F5F5F7]'
+                    ? 'bg-[var(--accent-wash)] text-[var(--foreground)]'
+                    : 'text-[var(--muted)] hover:text-[var(--foreground)]'
                 }`}
               >
                 {item.label}

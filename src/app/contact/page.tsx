@@ -46,7 +46,7 @@ export default function ContactPage() {
         copy={contactPage.copy}
       />
 
-      <section className="section-space border-b border-white/10">
+      <section className="section-space border-b border-[var(--line)]">
         <Container>
           <div className="col-span-12 lg:col-span-7">
             <Reveal>
@@ -57,19 +57,19 @@ export default function ContactPage() {
           <div className="col-span-12 grid gap-4 lg:col-span-5">
             {contactCards.map((card, index) => (
               <Reveal key={card.label} delay={0.04 * index}>
-                <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-5 md:p-6">
+                <div className="rounded-[1.5rem] border border-[var(--line)] bg-[var(--surface-quiet)] p-5 md:p-6">
                   <p className="eyebrow">{card.label}</p>
                   {card.href ? (
                     <Link
                       href={card.href}
-                      className="mt-3 block text-lg font-medium tracking-[-0.03em] text-[#F5F5F7] transition-colors hover:text-[#2E5BFF]"
+                      className="mt-3 block text-lg font-medium tracking-[-0.03em] text-[var(--foreground)] transition-colors hover:text-[var(--accent)]"
                       target={card.href.startsWith('http') ? '_blank' : undefined}
                       rel={card.href.startsWith('http') ? 'noreferrer' : undefined}
                     >
                       {card.value}
                     </Link>
                   ) : (
-                    <p className="mt-3 text-lg font-medium tracking-[-0.03em] text-[#F5F5F7]">
+                    <p className="mt-3 text-lg font-medium tracking-[-0.03em] text-[var(--foreground)]">
                       {card.value}
                     </p>
                   )}

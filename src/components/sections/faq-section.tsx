@@ -23,7 +23,7 @@ export function FaqSection({
   items = defaultFaq
 }: FaqSectionProps) {
   return (
-    <section className="section-space border-b border-white/10">
+    <section className="section-space border-b border-[var(--line)]">
       <Container>
         <div className="col-span-12 lg:col-span-4">
           <SectionIntro eyebrow={eyebrow} title={title} copy={copy} />
@@ -32,10 +32,10 @@ export function FaqSection({
         <div className="col-span-12 grid gap-4 lg:col-span-8">
           {items.map((item, index) => (
             <Reveal key={item.q} delay={0.04 * index}>
-              <details className="group rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-5 md:p-6">
-                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left text-lg font-medium tracking-[-0.03em] text-[#F5F5F7]">
+              <details className="group rounded-[1.5rem] border border-[var(--line)] bg-[var(--surface-quiet)] p-5 md:p-6">
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left text-lg font-medium tracking-[-0.03em] text-[var(--foreground)]">
                   <span>{item.q}</span>
-                  <Plus className="mt-1 h-5 w-5 shrink-0 text-[#2E5BFF] transition group-open:rotate-45" />
+                  <Plus className="mt-1 h-5 w-5 shrink-0 text-[var(--accent)] transition group-open:rotate-45" />
                 </summary>
                 <p className="body-sm mt-4 max-w-3xl">{item.a}</p>
               </details>

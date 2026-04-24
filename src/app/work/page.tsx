@@ -39,7 +39,7 @@ export default function WorkPage() {
         copy={workPage.copy}
       />
 
-      <section className="section-space border-b border-white/10">
+      <section className="section-space border-b border-[var(--line)]">
         <Container>
           <Reveal className="col-span-12 mb-10 lg:col-span-8">
             <p className="body-lg max-w-3xl">{workPage.intro}</p>
@@ -54,14 +54,14 @@ export default function WorkPage() {
         </Container>
       </section>
 
-      <section className="section-space border-b border-white/10">
+      <section className="section-space border-b border-[var(--line)]">
         <Container>
           <div className="col-span-12 grid gap-4 md:grid-cols-3">
             {processNotes.map((item, index) => (
               <Reveal key={item.title} delay={0.04 * index}>
-                <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-6">
+                <div className="h-full rounded-[1.5rem] border border-[var(--line)] bg-[var(--surface-quiet)] p-6">
                   <p className="eyebrow">0{index + 1}</p>
-                  <h2 className="mt-4 text-[1.5rem] font-medium tracking-[-0.04em] text-[#F5F5F7]">
+                  <h2 className="mt-4 text-[1.5rem] font-medium tracking-[-0.04em] text-[var(--foreground)]">
                     {item.title}
                   </h2>
                   <p className="body-sm mt-3">{item.copy}</p>

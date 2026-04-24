@@ -55,10 +55,10 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
 
   return (
     <html lang="en">
-      <body className="bg-[#0A0A0A] text-[#F5F5F7] antialiased">
+      <body className="bg-[var(--background)] text-[var(--foreground)] antialiased">
         <a
           href="#main-content"
-          className="absolute left-4 top-4 z-[100] -translate-y-16 rounded-full bg-[#F5F5F7] px-4 py-2 text-sm text-[#0A0A0A] transition focus:translate-y-0"
+          className="absolute left-4 top-4 z-[100] -translate-y-16 rounded-full bg-[var(--foreground)] px-4 py-2 text-sm text-[var(--background)] transition focus:translate-y-0"
         >
           Skip to content
         </a>
