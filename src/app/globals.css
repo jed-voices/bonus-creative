@@ -1,13 +1,23 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #f5f5f7;
-  --muted: #86868b;
-  --accent: #2e5bff;
-  --action: #ff5c00;
-  --line: rgba(245, 245, 247, 0.1);
-  --surface: rgba(255, 255, 255, 0.03);
+  --background: #0c1116;
+  --background-frost: rgba(12, 17, 22, 0.8);
+  --foreground: #f3efe7;
+  --foreground-soft: rgba(243, 239, 231, 0.72);
+  --muted: #9d978b;
+  --accent: #6bb7a6;
+  --accent-strong: #4f9f8f;
+  --accent-wash: rgba(107, 183, 166, 0.16);
+  --action: #d98a52;
+  --action-strong: #c97841;
+  --action-wash: rgba(217, 138, 82, 0.16);
+  --line: rgba(243, 239, 231, 0.12);
+  --line-strong: rgba(243, 239, 231, 0.2);
+  --surface-quiet: rgba(243, 239, 231, 0.02);
+  --surface: rgba(243, 239, 231, 0.04);
+  --surface-hover: rgba(243, 239, 231, 0.08);
+  --panel: rgba(8, 11, 15, 0.42);
   --max-width: 1600px;
   --grid-gap: clamp(1rem, 2vw, 1.75rem);
   --section-space: clamp(5rem, 10vw, 9rem);
@@ -30,7 +40,11 @@ body {
   margin: 0;
   min-height: 100vh;
   background: var(--background);
+  background-image:
+    radial-gradient(circle at top left, rgba(107, 183, 166, 0.16), transparent 36%),
+    radial-gradient(circle at 80% 12%, rgba(217, 138, 82, 0.14), transparent 26%);
   color: var(--foreground);
+  font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -84,6 +98,7 @@ textarea {
   line-height: 0.92;
   letter-spacing: -0.06em;
   font-weight: 500;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
 }
 
 .display-lg {
@@ -92,6 +107,7 @@ textarea {
   line-height: 0.96;
   letter-spacing: -0.045em;
   font-weight: 500;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
 }
 
 .body-lg {
@@ -112,6 +128,53 @@ textarea {
   height: 1px;
   width: 100%;
   background: var(--line);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, var(--reveal-offset, 28px), 0);
+  animation: reveal-in var(--reveal-duration, 0.7s) cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--reveal-delay, 0s);
+}
+
+.reveal-eager {
+  --reveal-offset: 18px;
+  --reveal-duration: 0.42s;
+}
+
+.magnetic-link {
+  transform: translate3d(0, 0, 0);
+  transition:
+    transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.magnetic-link:hover,
+.magnetic-link:focus-visible {
+  transform: translate3d(0, -2px, 0);
+}
+
+@keyframes reveal-in {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .magnetic-link {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 @media (max-width: 960px) {

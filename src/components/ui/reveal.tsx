@@ -1,18 +1,27 @@
-'use client';
+import type { CSSProperties, ReactNode } from 'react';
 
-import { motion } from 'framer-motion';
-import type { ReactNode } from 'react';
+interface RevealProps {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+  eager?: boolean;
+}
 
-export function Reveal({ children, className = '', delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
+export function Reveal({
+  children,
+  className = '',
+  delay = 0,
+  eager = false
+}: RevealProps) {
+  const style = {
+    '--reveal-delay': `${delay}s`,
+    '--reveal-duration': `${eager ? 0.42 : 0.7}s`,
+    '--reveal-offset': `${eager ? 18 : 28}px`
+  } as CSSProperties;
+
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay }}
-    >
+    <div className={['reveal', eager ? 'reveal-eager' : '', className].filter(Boolean).join(' ')} style={style}>
       {children}
-    </motion.div>
+    </div>
   );
 }
