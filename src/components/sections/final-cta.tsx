@@ -21,8 +21,8 @@ export function FinalCta({
   body = home.cta.body,
   buttonLabel = home.cta.buttonLabel,
   buttonHref = home.cta.buttonHref,
-  secondaryLabel = 'View Work',
-  secondaryHref = '/work',
+  secondaryLabel = 'View Portfolio',
+  secondaryHref = '/portfolio',
   footer = home.cta.footer
 }: FinalCtaProps) {
   const hasSecondaryAction = Boolean(secondaryLabel && secondaryHref);

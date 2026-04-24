@@ -25,7 +25,7 @@ export async function generateMetadata({
 
   if (!project) {
     return {
-      title: 'Case study not found'
+      title: 'Project not found'
     };
   }
 
@@ -138,7 +138,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         </Container>
       </section>
 
-      <FinalCta secondaryLabel="View all case studies" secondaryHref="/case-studies" />
+      <FinalCta secondaryLabel="View Portfolio" secondaryHref="/portfolio" />
     </>
   );
 }

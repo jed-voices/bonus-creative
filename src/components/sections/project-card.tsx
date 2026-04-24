@@ -9,6 +9,9 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, className = '' }: ProjectCardProps) {
+  const primaryHref = project.href;
+  const primaryExternal = project.external;
+
   return (
     <article
       className={`group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-[var(--line)] bg-[var(--surface)] ${className}`.trim()}
@@ -33,10 +36,12 @@ export function ProjectCard({ project, className = '' }: ProjectCardProps) {
 
         <div className="flex flex-wrap gap-3">
           <Link
-            href={`/case-studies/${project.slug}`}
+            href={primaryHref}
+            target={primaryExternal ? '_blank' : undefined}
+            rel={primaryExternal ? 'noreferrer' : undefined}
             className="button-primary ui-copy inline-flex items-center gap-2 border transition-colors"
           >
-            <span>Read case study</span>
+            <span>{project.linkLabel}</span>
             <ArrowUpRight size={16} />
           </Link>
           {project.externalUrl ? (

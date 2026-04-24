@@ -1,9 +1,8 @@
 export const navigation = [
   { href: '/', label: 'Home' },
-  { href: '/work', label: 'Work' },
+  { href: '/portfolio', label: 'Portfolio' },
   { href: '/services', label: 'Services' },
   { href: '/about', label: 'About' },
-  { href: '/case-studies', label: 'Case Studies' },
   { href: '/contact', label: 'Contact' },
   { href: '/reel', label: 'Reel' }
 ] as const;
@@ -20,7 +19,10 @@ export const seo = {
     'Brand films, documentary storytelling, event coverage, and post-production from Bonus Creative. Clear process. Strong visuals. Story-first work.',
   contactTitle: 'Contact Bonus Creative',
   contactDescription:
-    'Start a project with Bonus Creative. Talk directly with Bo Wright about branded films, documentary content, nonprofit storytelling, church media, and event video production.'
+    'Start a project with Bonus Creative. Talk directly with Bo Wright about branded films, documentary content, nonprofit storytelling, church media, and event video production.',
+  portfolioTitle: 'Portfolio',
+  portfolioDescription:
+    'Explore Bonus Creative portfolio work from Bo Wright, including branded films, documentaries, nonprofit stories, church media, drone cinematography, events, and production support.'
 } as const;
 
 export const site = {
@@ -164,8 +166,8 @@ export const projects = [
     slug: 'goodwill',
     title: 'Goodwill',
     category: 'Case study',
-    poster: '/posters/goodwill-production-poster.svg',
-    posterImage: '/images/goodwill-production-group.jpeg',
+    poster: '/images/portfolio/goodwill-case-study.webp',
+    posterImage: '/images/portfolio/goodwill-case-study.webp',
     posterEyebrow: 'Case study / community story',
     posterTitle: 'GOODWILL',
     posterTagline: 'Grounded. Human. Useful.',
@@ -181,6 +183,9 @@ export const projects = [
       'Concept, directing, interviews, cinematography, edit, finishing',
     result:
       'A film that helped the work feel human first and institutional second.',
+    href: '/case-studies/goodwill',
+    linkLabel: 'Read Goodwill case study',
+    external: false,
     externalUrl: '',
     externalLabel: ''
   },
@@ -188,8 +193,8 @@ export const projects = [
     slug: 'oklahoma-heismen',
     title: 'The Oklahoma Heismen',
     category: 'Feature documentary',
-    poster: '/posters/oklahoma-heismen-production-poster.svg',
-    posterImage: '/images/heismen-camera-setup.jpeg',
+    poster: '/images/portfolio/feature-documentary.webp',
+    posterImage: '/images/portfolio/feature-documentary.webp',
     posterEyebrow: 'Feature documentary / Oklahoma story',
     posterTitle: 'THE OKLAHOMA HEISMEN',
     posterTagline: 'Camera, crew, and story in motion.',
@@ -204,6 +209,9 @@ export const projects = [
     role: 'Writer, director, and filmmaker',
     result:
       'A feature documentary with a strong sense of place, memory, and Oklahoma pride.',
+    href: '/portfolio#oklahoma-heismen',
+    linkLabel: 'View project',
+    external: false,
     externalUrl: 'https://youtu.be/06iucfl9jxQ?si=DXIv1z-TCmH8kGLm',
     externalLabel: 'Watch on YouTube'
   },
@@ -211,8 +219,8 @@ export const projects = [
     slug: 'mission-stories',
     title: 'Mission stories',
     category: 'Nonprofit',
-    poster: '/posters/voices-of-okc-mission-stories-poster.svg',
-    posterImage: '/images/goodwill-production-group.jpeg',
+    poster: '/images/portfolio/mission-stories.webp',
+    posterImage: '/images/portfolio/mission-stories.webp',
     posterEyebrow: 'Mission stories / community organization',
     posterTitle: 'VOICES of OKC',
     posterTagline: 'Honest stories for real communities.',
@@ -228,6 +236,9 @@ export const projects = [
       'Creative direction, production, interviews, edit, delivery',
     result:
       'Story assets that feel grounded, watchable, and worth sharing.',
+    href: '/portfolio#mission-stories',
+    linkLabel: 'View portfolio',
+    external: false,
     externalUrl: '',
     externalLabel: ''
   }
@@ -240,14 +251,14 @@ export const work = [
     category: 'Case study',
     summary:
       'A grounded story built to make the impact feel immediate, credible, and human.',
-    poster: '/posters/goodwill-production-poster.svg',
-    posterImage: '/images/goodwill-production-group.jpeg',
+    poster: '/images/portfolio/goodwill-case-study.webp',
+    posterImage: '/images/portfolio/goodwill-case-study.webp',
     posterEyebrow: 'Case study / community story',
     posterTitle: 'GOODWILL',
     posterTagline: 'Grounded. Human. Useful.',
     previewVideo: site.hero.reelVideo,
     href: '/case-studies/goodwill',
-    linkLabel: 'Read case study',
+    linkLabel: 'Read Goodwill case study',
     external: false,
     secondaryHref: '',
     secondaryLabel: '',
@@ -259,14 +270,14 @@ export const work = [
     category: 'Feature documentary',
     summary:
       'A feature project shaped by place, legacy, and a feel for what makes Oklahoma stories stick.',
-    poster: '/posters/oklahoma-heismen-production-poster.svg',
-    posterImage: '/images/heismen-camera-setup.jpeg',
+    poster: '/images/portfolio/feature-documentary.webp',
+    posterImage: '/images/portfolio/feature-documentary.webp',
     posterEyebrow: 'Feature documentary / Oklahoma story',
     posterTitle: 'THE OKLAHOMA HEISMEN',
     posterTagline: 'Camera, crew, and story in motion.',
     previewVideo: '',
-    href: '/case-studies/oklahoma-heismen',
-    linkLabel: 'Read case study',
+    href: '/portfolio#oklahoma-heismen',
+    linkLabel: 'View project',
     external: false,
     secondaryHref: 'https://youtu.be/06iucfl9jxQ?si=DXIv1z-TCmH8kGLm',
     secondaryLabel: 'Watch on YouTube',
@@ -278,14 +289,14 @@ export const work = [
     category: 'Nonprofit',
     summary:
       'Short films for nonprofits, churches, and community organizations that need honesty more than hype.',
-    poster: '/posters/voices-of-okc-mission-stories-poster.svg',
-    posterImage: '/images/goodwill-production-group.jpeg',
+    poster: '/images/portfolio/mission-stories.webp',
+    posterImage: '/images/portfolio/mission-stories.webp',
     posterEyebrow: 'Mission stories / community organization',
     posterTitle: 'VOICES of OKC',
     posterTagline: 'Honest stories for real communities.',
     previewVideo: site.hero.reelVideo,
-    href: '/case-studies/mission-stories',
-    linkLabel: 'Read case study',
+    href: '/portfolio#mission-stories',
+    linkLabel: 'View portfolio',
     external: false,
     secondaryHref: '',
     secondaryLabel: '',
@@ -301,6 +312,227 @@ export const workPage = {
     'Some pieces are polished and strategic. Some are raw and human. Some need to move fast. Some need room to breathe. What ties them together is clarity, restraint, and a point of view.',
   ctaTitle: "Need something like this, but built for your story? Let's talk."
 } as const;
+
+export const portfolioPage = {
+  eyebrow: 'Portfolio',
+  title: 'The work, without making it weird.',
+  copy:
+    'A practical look at the films, stories, event work, and production support Bonus Creative has been built to handle.',
+  intro:
+    'The format changes from project to project. The standard does not. Bo builds pieces around clear purpose, human pacing, and enough visual restraint to let the story do its job.',
+  ctaTitle: "Have something that belongs in this mix? Let's talk."
+} as const;
+
+export const portfolioHighlights = [
+  {
+    slug: 'goodwill',
+    eyebrow: 'Goodwill case study',
+    title: 'Goodwill',
+    image: '/images/portfolio/goodwill-case-study.webp',
+    images: [
+      '/images/portfolio/goodwill-case-study.webp',
+      '/images/portfolio/goodwill-monitor.webp',
+      '/images/portfolio/goodwill-interview-wide.webp'
+    ],
+    imageAlt: 'Bo Wright filming an interview for a community story.',
+    body:
+      'A grounded community story shaped to make the impact feel immediate, credible, and human.',
+    href: '/case-studies/goodwill',
+    label: 'Read Goodwill case study'
+  },
+  {
+    slug: 'oklahoma-heismen',
+    eyebrow: 'Feature documentary',
+    title: 'Feature documentary',
+    image: '/images/portfolio/feature-documentary.webp',
+    images: [
+      '/images/portfolio/feature-documentary.webp',
+      '/images/heismen-camera-setup.jpeg',
+      '/images/heismen-production-room.jpeg'
+    ],
+    imageAlt: 'Bo Wright operating a cinema camera outdoors.',
+    body:
+      'The Oklahoma Heismen is a feature project shaped by place, legacy, football history, and a feel for what makes Oklahoma stories stick.',
+    href: 'https://youtu.be/06iucfl9jxQ?si=DXIv1z-TCmH8kGLm',
+    label: 'Watch on YouTube'
+  },
+  {
+    slug: 'mission-stories',
+    eyebrow: 'Mission stories',
+    title: 'Mission stories',
+    image: '/images/portfolio/mission-stories.webp',
+    images: [
+      '/images/portfolio/mission-stories.webp',
+      '/images/portfolio/mission-production-wide.webp',
+      '/images/goodwill-production-group.jpeg'
+    ],
+    imageAlt: 'A production room set for a mission-driven interview.',
+    body:
+      'Short story-driven films for teams that need honesty, clarity, and real people on screen instead of hype.',
+    href: '/contact',
+    label: 'Talk through a story'
+  }
+] as const;
+
+export const portfolioExamples = [
+  {
+    slug: 'corporate-who-we-are-video',
+    eyebrow: 'Corporate video production',
+    title: 'Corporate who-we-are video',
+    image: '/images/portfolio/corporate-who-we-are.webp',
+    images: [
+      '/images/portfolio/corporate-who-we-are.webp',
+      '/images/portfolio/warm-interview-01.webp',
+      '/images/portfolio/bo-camera-rig-01.webp'
+    ],
+    imageAlt: 'An interview framed through a production camera monitor.',
+    body:
+      'A direct way to let clients, recruits, and partners hear from the people behind the work without turning it into corporate wallpaper.'
+  },
+  {
+    slug: 'corporate-explainer-video',
+    eyebrow: 'Corporate video production',
+    title: 'Corporate explainer video',
+    image: '/images/portfolio/corporate-explainer.webp',
+    images: [
+      '/images/portfolio/corporate-explainer.webp',
+      '/images/portfolio/warm-interview-02.webp',
+      '/images/portfolio/bo-camera-rig-02.webp'
+    ],
+    imageAlt: 'A production camera and interview setup in a bright office space.',
+    body:
+      'A focused piece for explaining a service, team, process, or part of the business clearly enough that people can actually use it.'
+  },
+  {
+    slug: 'mini-docs',
+    eyebrow: 'Documentaries / stories',
+    title: 'Mini-docs',
+    image: '/images/portfolio/mini-docs.webp',
+    images: [
+      '/images/portfolio/mini-docs.webp',
+      '/images/portfolio/warm-interview-03.webp',
+      '/images/portfolio/bo-camera-rig-03.webp'
+    ],
+    imageAlt: 'A cinematic interview frame from a documentary-style production.',
+    body:
+      'Short documentary-style stories for organizations with real people, real stakes, and more to say than a thirty-second promo can handle.'
+  },
+  {
+    slug: 'church-stories',
+    eyebrow: 'Church stories',
+    title: 'Church stories',
+    image: '/images/portfolio/church-stories.webp',
+    images: [
+      '/images/portfolio/church-stories.webp',
+      '/images/portfolio/bo-camera-rig-04.webp',
+      '/images/portfolio/bo-camera-rig-05.webp'
+    ],
+    imageAlt: 'A warm interview frame for a story-driven film.',
+    body:
+      'Message, testimony, ministry, and campaign films shaped to feel warm, grounded, and human instead of overproduced.'
+  },
+  {
+    slug: 'drone-demo-reel',
+    eyebrow: 'Drone cinematography',
+    title: '2024 drone demo reel',
+    image: '/images/portfolio/drone-demo-reel.webp',
+    images: [
+      '/images/portfolio/drone-demo-reel.webp',
+      '/images/portfolio/bo-camera-profile.webp',
+      '/images/portfolio/bo-camera-rig-06.webp'
+    ],
+    imageAlt: 'Bo Wright monitoring a cinema camera during an outdoor production.',
+    body:
+      'Aerial footage used for scale, movement, location, and context. Pretty shots are fine. Useful pretty shots are better.'
+  },
+  {
+    slug: 'event-coverage',
+    eyebrow: 'Events / conferences',
+    title: 'Event coverage',
+    image: '/images/portfolio/event-coverage.webp',
+    images: [
+      '/images/portfolio/event-coverage.webp',
+      '/images/portfolio/bo-camera-working.webp',
+      '/images/portfolio/bo-camera-rig-07.webp'
+    ],
+    imageAlt: 'A wide production setup with lighting, cameras, and interview subjects.',
+    body:
+      'Coverage for launches, fundraisers, conferences, and corporate events that turns the day into assets people can keep using.'
+  },
+  {
+    slug: 'convention-coverage',
+    eyebrow: 'Conventions / trade shows',
+    title: 'Convention coverage',
+    image: '/images/portfolio/convention-coverage.webp',
+    images: [
+      '/images/portfolio/convention-coverage.webp',
+      '/images/portfolio/bo-camera-smile.webp',
+      '/posters/oklahoma-heismen-youtube.jpg'
+    ],
+    imageAlt: 'A camera, light, and interview setup prepared for event coverage.',
+    body:
+      'Start-to-finish convention support for teams that need recap films, speaker moments, sponsor assets, and practical content from the room.'
+  }
+] as const;
+
+export const portfolioCategories = [
+  {
+    slug: 'corporate-who-we-are',
+    eyebrow: 'Corporate video production',
+    title: 'Who-we-are films',
+    body:
+      'Clear, human films that let clients, customers, and recruits understand the people behind the organization.',
+    details: ['Leadership and team stories', 'Culture and recruiting pieces', 'Company overview films']
+  },
+  {
+    slug: 'corporate-explainers',
+    eyebrow: 'Corporate video production',
+    title: 'Explainer videos',
+    body:
+      'Focused pieces that make a service, process, product, or part of the business easier to understand and easier to share.',
+    details: ['Service explainers', 'Product or process videos', 'Internal communication support']
+  },
+  {
+    slug: 'mini-docs',
+    eyebrow: 'Documentaries / stories',
+    title: 'Mini-docs',
+    body:
+      'Documentary-style stories with enough room for interviews, texture, pacing, and a real emotional center.',
+    details: ['Founder stories', 'Mission-driven stories', 'Character-led short documentaries']
+  },
+  {
+    slug: 'church-stories',
+    eyebrow: 'Church stories',
+    title: 'Church and ministry films',
+    body:
+      'Story-first support for churches and ministries that need message, testimony, event, or campaign work to feel grounded.',
+    details: ['Testimony films', 'Vision pieces', 'Production team support']
+  },
+  {
+    slug: 'drone-cinematography',
+    eyebrow: 'Drone cinematography',
+    title: 'Aerial work with a reason',
+    body:
+      'Drone footage used for scale, context, and rhythm. Not just because drones exist, which is a low bar and somehow still missed.',
+    details: ['Aerial establishing shots', 'Location context', 'Event and campaign footage']
+  },
+  {
+    slug: 'events-conventions',
+    eyebrow: 'Conventions / trade shows / events',
+    title: 'Event and convention coverage',
+    body:
+      'Coverage that keeps working after the room empties: recaps, speaker cutdowns, sponsor assets, and social-ready edits.',
+    details: ['Conference recaps', 'Fundraiser and launch films', 'Convention coverage']
+  },
+  {
+    slug: 'production-partner',
+    eyebrow: 'Production partner',
+    title: 'Shooting, editing, and finishing support',
+    body:
+      'A reliable extra set of experienced hands for teams that need someone to shoot, direct, edit, finish, or carry a project forward.',
+    details: ['Shooter-editor support', 'Post-production', 'Oklahoma production support']
+  }
+] as const;
 
 export const contactPage = {
   title: "Let's make something worth watching.",
@@ -351,6 +583,8 @@ export const notFoundPage = {
 export type Project = (typeof projects)[number];
 export type Service = (typeof services)[number];
 export type WorkItem = (typeof work)[number];
+export type PortfolioExample = (typeof portfolioExamples)[number];
+export type PortfolioCategory = (typeof portfolioCategories)[number];
 
 export const cleanPhone = site.phone.replace(/[^\d]/g, '');
 

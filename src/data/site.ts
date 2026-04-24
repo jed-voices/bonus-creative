@@ -23,7 +23,7 @@ export const site = {
     reelTitle: 'Bo Wright demo reel',
     reelLabel:
       'Story-first work across branded films, documentaries, mission stories, event coverage, and Oklahoma-rooted projects.',
-    poster: '/posters/reel-poster.svg',
+    poster: '/posters/reel-landscape.svg',
     videoUrl: '/reel/'
   },
   metrics: [
@@ -128,7 +128,7 @@ export const projects = [
     slug: 'goodwill',
     title: 'Goodwill',
     category: 'Case study',
-    poster: '/posters/mission-film.svg',
+    poster: '/images/portfolio/goodwill-case-study.webp',
     summary:
       'A human-centered film built to make impact feel immediate, credible, and personal.',
     outcome:
@@ -148,7 +148,7 @@ export const projects = [
     slug: 'oklahoma-heismen',
     title: 'The Oklahoma Heismen',
     category: 'Feature documentary',
-    poster: '/posters/brand-story.svg',
+    poster: '/images/portfolio/feature-documentary.webp',
     summary:
       'A documentary rooted in Oklahoma identity, football history, and the stories behind the state’s first four Heisman Trophy winners.',
     outcome:
@@ -168,7 +168,7 @@ export const projects = [
     slug: 'mission-stories',
     title: 'Mission stories',
     category: 'Nonprofit',
-    poster: '/posters/event-campaign.svg',
+    poster: '/images/portfolio/mission-stories.webp',
     summary:
       'Films designed to help supporters feel both the work and the stakes without overstatement.',
     outcome:
