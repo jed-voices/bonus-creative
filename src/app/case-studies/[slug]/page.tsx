@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowUpRight } from 'lucide-react';
 import { projects } from '@/lib/site';
 import { FinalCta } from '@/components/sections/final-cta';
 import { PageHero } from '@/components/sections/page-hero';
+import { PosterFrame } from '@/components/sections/poster-frame';
 import { Container } from '@/components/ui/container';
 import { Reveal } from '@/components/ui/reveal';
 
@@ -61,7 +61,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               href={project.externalUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)] bg-[var(--accent)] px-5 py-3 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--accent-strong)] hover:bg-[var(--accent-strong)]"
+              className="button-primary ui-copy inline-flex items-center gap-2 border transition-colors"
             >
               <span>{project.externalLabel || 'View project'}</span>
               <ArrowUpRight size={16} />
@@ -75,13 +75,14 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           <div className="col-span-12 grid gap-6">
             <Reveal>
               <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--surface)]">
-                <Image
-                  src={project.poster}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                  sizes="100vw"
+                <PosterFrame
+                  image={project.posterImage}
+                  alt={`${project.title} production still`}
+                  eyebrow={project.posterEyebrow}
+                  title={project.posterTitle}
+                  tagline={project.posterTagline}
                   priority
+                  sizes="100vw"
                 />
               </div>
             </Reveal>
@@ -124,7 +125,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               </Reveal>
 
               <Reveal delay={0.12}>
-                <div className="rounded-[1.5rem] border border-[var(--line)] bg-[radial-gradient(circle_at_top_left,rgba(107,183,166,0.18),transparent_36%),rgba(243,239,231,0.03)] p-6">
+                <div className="rounded-[1.5rem] border border-[var(--line)] bg-[radial-gradient(circle_at_top_left,rgba(26,34,48,0.92),transparent_36%),var(--color-bg-secondary)] p-6">
                   <p className="eyebrow">Result</p>
                   <h2 className="mt-3 text-[1.5rem] font-medium tracking-[-0.04em] text-[var(--foreground)]">
                     {project.outcome}

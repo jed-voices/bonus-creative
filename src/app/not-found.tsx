@@ -23,7 +23,7 @@ export default function NotFound() {
           <div className="col-span-12">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--surface)] px-5 py-3 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--line-strong)] hover:bg-[var(--surface-hover)]"
+              className="button-secondary ui-copy inline-flex items-center gap-2 rounded-full px-5 py-3 transition-colors"
             >
               <ArrowLeft size={16} />
               <span>Back to home</span>

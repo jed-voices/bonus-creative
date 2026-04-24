@@ -20,44 +20,48 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--line)] bg-[var(--background-frost)] backdrop-blur-xl">
-      <Container className="items-center gap-y-4 py-4">
-        <div className="col-span-3 md:col-span-2 lg:col-span-3">
-          <Link href="/" className="block w-fit" aria-label={site.name}>
-            <BrandLogo priority />
-          </Link>
-        </div>
-
-        <div className="col-span-3 flex justify-end md:col-span-4 lg:col-span-3 lg:order-3">
+      <Container className="gap-y-3 py-4">
+        <div className="col-span-12 flex justify-end">
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-full border border-[var(--line)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--line-strong)] hover:bg-[var(--surface-hover)]"
+            className="ui-copy inline-flex items-center rounded-full border border-[rgba(127,178,255,0.3)] bg-[rgba(127,178,255,0.08)] px-4 py-2 text-[var(--accent-strong)] shadow-[0_0_28px_rgba(127,178,255,0.08)] transition-colors hover:border-[rgba(127,178,255,0.46)] hover:bg-[rgba(127,178,255,0.14)]"
           >
             {site.hero.projectTitle}
           </Link>
         </div>
 
-        <nav
-          className="col-span-12 order-3 flex flex-wrap items-center gap-2 rounded-[1.25rem] border border-[var(--line)] bg-[var(--surface)] p-2 md:order-2 md:col-span-12 lg:col-span-6 lg:justify-center"
-          aria-label="Primary"
-        >
-          {navigation.map((item) => {
-            const active = isActive(currentPath, item.href);
+        <div className="col-span-12 flex items-stretch gap-2">
+          <Link
+            href="/"
+            className="flex min-h-[56px] w-[48px] shrink-0 items-center justify-center transition-opacity hover:opacity-80"
+            aria-label={site.name}
+          >
+            <BrandLogo className="h-full max-h-[46px] w-auto" priority />
+          </Link>
 
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`rounded-full px-3 py-2 text-sm transition-colors ${
-                  active
-                    ? 'bg-[var(--accent-wash)] text-[var(--foreground)]'
-                    : 'text-[var(--muted)] hover:text-[var(--foreground)]'
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
+          <nav
+            className="flex min-h-[56px] flex-1 flex-wrap items-center gap-1 rounded-[1.25rem] border border-[var(--line)] bg-[var(--surface)] p-2 sm:gap-2"
+            aria-label="Primary"
+          >
+            {navigation.map((item) => {
+              const active = isActive(currentPath, item.href);
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`ui-copy rounded-full px-2 py-2 transition-colors sm:px-3 ${
+                    active
+                      ? 'bg-[var(--accent-wash)] text-[var(--foreground)]'
+                      : 'text-[var(--muted)] hover:text-[var(--foreground)]'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
       </Container>
     </header>
   );

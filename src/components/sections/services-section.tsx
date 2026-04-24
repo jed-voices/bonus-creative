@@ -44,7 +44,7 @@ export function ServicesSection() {
         <Reveal delay={0.16} className="col-span-12 pt-8">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-sm text-[var(--foreground)] transition-colors hover:text-[var(--accent)]"
+            className="ui-copy inline-flex items-center gap-2 text-[var(--foreground)] transition-colors hover:text-[var(--accent)]"
           >
             <span>See the full service list</span>
           </Link>

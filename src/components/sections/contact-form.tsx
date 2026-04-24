@@ -47,7 +47,7 @@ export function ContactForm() {
   }
 
   const fieldClassName =
-    'min-h-12 rounded-[1rem] border border-[var(--line)] bg-[var(--panel)] px-4 py-3 text-[var(--foreground)] outline-none transition placeholder:text-[var(--muted)] focus:border-[var(--accent)]';
+    'ui-copy min-h-12 rounded-[1rem] border border-[var(--line)] bg-[var(--panel)] px-4 py-3 text-[var(--foreground)] outline-none transition placeholder:text-[var(--muted)] focus:border-[var(--accent)]';
 
   return (
     <form
@@ -171,7 +171,7 @@ export function ContactForm() {
       <div className="space-y-3" aria-live="polite">
         <button
           type="submit"
-          className="inline-flex items-center gap-2 rounded-full border border-[var(--action)] bg-[var(--action)] px-5 py-3 text-sm text-[var(--background)] transition-colors hover:border-[var(--action-strong)] hover:bg-[var(--action-strong)]"
+          className="button-primary ui-copy inline-flex items-center gap-2 border transition-colors"
         >
           <span>{contactPage.submitLabel}</span>
           <ArrowUpRight size={16} />

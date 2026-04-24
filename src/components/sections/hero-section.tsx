@@ -6,8 +6,8 @@ import { MagneticButton } from '@/components/ui/magnetic-button';
 export function HeroSection() {
   return (
     <section className="section-space relative overflow-hidden border-b border-[var(--line)]">
-      <Container className="items-end">
-        <div className="col-span-12 flex flex-col gap-6 lg:col-span-4 lg:pb-6">
+      <Container className="items-center">
+        <div className="col-span-12 flex flex-col gap-6 lg:col-span-4">
           <Reveal eager>
             <p className="eyebrow">{site.hero.eyebrow}</p>
           </Reveal>
@@ -39,7 +39,7 @@ export function HeroSection() {
         <div className="col-span-12 lg:col-span-8">
           <Reveal eager delay={0.08}>
             <div className="relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--surface)] shadow-[0_24px_100px_rgba(2,6,9,0.45)]">
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,17,22,0.06),rgba(12,17,22,0.48))]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,15,20,0.06),rgba(11,15,20,0.52))]" />
               <video
                 className="aspect-[16/9] w-full object-cover"
                 autoPlay

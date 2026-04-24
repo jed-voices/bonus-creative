@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import type { Project } from '@/lib/site';
+import { PosterFrame } from '@/components/sections/poster-frame';
 
 interface ProjectCardProps {
   project: Project;
@@ -13,16 +13,14 @@ export function ProjectCard({ project, className = '' }: ProjectCardProps) {
     <article
       className={`group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-[var(--line)] bg-[var(--surface)] ${className}`.trim()}
     >
-      <div className="relative aspect-[16/10] overflow-hidden">
-        <Image
-          src={project.poster}
-          alt={`${project.title} poster`}
-          fill
-          className="object-cover transition duration-700 group-hover:scale-[1.03]"
-          sizes="(max-width: 1024px) 100vw, 33vw"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,17,22,0.08),rgba(12,17,22,0.2),rgba(12,17,22,0.78))]" />
-      </div>
+      <PosterFrame
+        image={project.posterImage}
+        alt={`${project.title} production still`}
+        eyebrow={project.posterEyebrow}
+        title={project.posterTitle}
+        tagline={project.posterTagline}
+        sizes="(max-width: 1024px) 100vw, 33vw"
+      />
 
       <div className="flex flex-1 flex-col justify-between gap-6 p-5 md:p-6">
         <div className="space-y-3">
@@ -36,7 +34,7 @@ export function ProjectCard({ project, className = '' }: ProjectCardProps) {
         <div className="flex flex-wrap gap-3">
           <Link
             href={`/case-studies/${project.slug}`}
-            className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)] bg-[var(--accent)] px-4 py-2 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--accent-strong)] hover:bg-[var(--accent-strong)]"
+            className="button-primary ui-copy inline-flex items-center gap-2 border transition-colors"
           >
             <span>Read case study</span>
             <ArrowUpRight size={16} />
@@ -46,7 +44,7 @@ export function ProjectCard({ project, className = '' }: ProjectCardProps) {
               href={project.externalUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--line-strong)] hover:bg-[var(--surface-hover)]"
+              className="button-secondary ui-copy inline-flex items-center gap-2 rounded-full px-4 py-2 transition-colors"
             >
               <span>{project.externalLabel || 'View project'}</span>
               <ArrowUpRight size={16} className="text-[var(--action)]" />

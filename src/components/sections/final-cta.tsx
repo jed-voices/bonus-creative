@@ -31,7 +31,7 @@ export function FinalCta({
     <section className="section-space">
       <Container>
         <Reveal className="col-span-12">
-          <div className="grid gap-8 rounded-[2rem] border border-[var(--line)] bg-[radial-gradient(circle_at_top_left,rgba(107,183,166,0.2),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(217,138,82,0.14),transparent_32%),rgba(243,239,231,0.03)] p-6 md:p-8 lg:grid-cols-12 lg:items-end">
+          <div className="grid gap-8 rounded-[2rem] border border-[var(--line)] bg-[radial-gradient(circle_at_top_left,rgba(26,34,48,0.92),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(127,178,255,0.12),transparent_34%),var(--color-bg-secondary)] p-6 md:p-8 lg:grid-cols-12 lg:items-end">
             <div className="space-y-4 lg:col-span-7">
               <p className="eyebrow">{eyebrow}</p>
               <h2 className="display-lg max-w-[11ch] text-[var(--foreground)]">
@@ -46,7 +46,7 @@ export function FinalCta({
               <div className="flex flex-wrap gap-3">
                 <Link
                   href={buttonHref}
-                  className="inline-flex items-center gap-2 rounded-full border border-[var(--action)] bg-[var(--action)] px-5 py-3 text-sm text-[var(--background)] transition-colors hover:border-[var(--action-strong)] hover:bg-[var(--action-strong)]"
+                  className="button-primary ui-copy inline-flex items-center gap-2 border transition-colors"
                 >
                   <span>{buttonLabel}</span>
                   <ArrowUpRight size={16} />
@@ -54,7 +54,7 @@ export function FinalCta({
                 {hasSecondaryAction ? (
                   <Link
                     href={secondaryHref}
-                    className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--surface)] px-5 py-3 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--line-strong)] hover:bg-[var(--surface-hover)]"
+                    className="button-secondary ui-copy inline-flex items-center gap-2 rounded-full px-5 py-3 transition-colors"
                   >
                     <span>{secondaryLabel}</span>
                     <ArrowUpRight size={16} />

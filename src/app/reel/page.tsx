@@ -31,14 +31,14 @@ export default function ReelPage() {
           <div className="flex flex-wrap gap-3 pt-2">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)] bg-[var(--accent)] px-5 py-3 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--accent-strong)] hover:bg-[var(--accent-strong)]"
+              className="button-primary ui-copy inline-flex items-center gap-2 border transition-colors"
             >
               <span>Start a Project</span>
               <ArrowUpRight size={16} />
             </Link>
             <Link
               href="/work"
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--surface)] px-5 py-3 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--line-strong)] hover:bg-[var(--surface-hover)]"
+              className="button-secondary ui-copy inline-flex items-center gap-2 rounded-full px-5 py-3 transition-colors"
             >
               <span>View Work</span>
               <ArrowUpRight size={16} />

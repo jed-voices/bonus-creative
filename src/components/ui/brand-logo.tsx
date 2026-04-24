@@ -8,14 +8,14 @@ interface BrandLogoProps {
 export function BrandLogo({ className = '', priority = false }: BrandLogoProps) {
   return (
     <Image
-      src="/brand/bonus-creative-logo.webp"
+      src="/brand/bonus-creative-logo.png"
       alt="Bonus Creative logo"
-      width={321}
-      height={180}
+      width={733}
+      height={1200}
       priority={priority}
       unoptimized
-      sizes="(max-width: 768px) 120px, 160px"
-      className={`h-auto w-[120px] object-contain md:w-[144px] ${className}`.trim()}
+      sizes="96px"
+      className={`object-contain ${className}`.trim()}
     />
   );
 }

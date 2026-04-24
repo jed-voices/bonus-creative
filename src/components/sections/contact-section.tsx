@@ -27,7 +27,7 @@ export function ContactSection() {
     <section className="section-space">
       <Container>
         <Reveal className="col-span-12">
-          <div className="grid gap-8 rounded-[2rem] border border-[var(--line)] bg-[radial-gradient(circle_at_top_left,rgba(107,183,166,0.18),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(217,138,82,0.14),transparent_28%),rgba(243,239,231,0.03)] p-6 md:p-8 lg:grid-cols-12 lg:items-end">
+          <div className="grid gap-8 rounded-[2rem] border border-[var(--line)] bg-[radial-gradient(circle_at_top_left,rgba(26,34,48,0.92),transparent_36%),radial-gradient(circle_at_bottom_right,rgba(127,178,255,0.12),transparent_30%),var(--color-bg-secondary)] p-6 md:p-8 lg:grid-cols-12 lg:items-end">
             <div className="space-y-4 lg:col-span-7">
               <p className="eyebrow">{home.cta.eyebrow}</p>
               <h2 className="display-lg max-w-[10ch] text-[var(--foreground)]">
@@ -52,12 +52,12 @@ export function ContactSection() {
                     {item.href ? (
                       <Link
                         href={item.href}
-                        className="mt-3 block text-sm text-[var(--foreground)] transition-colors hover:text-[var(--accent)]"
+                        className="ui-copy mt-3 block text-[var(--foreground)] transition-colors hover:text-[var(--accent)]"
                       >
                         {item.value}
                       </Link>
                     ) : (
-                      <p className="mt-3 text-sm text-[var(--foreground)]">{item.value}</p>
+                      <p className="ui-copy mt-3 text-[var(--foreground)]">{item.value}</p>
                     )}
                   </div>
                 ))}
@@ -66,7 +66,7 @@ export function ContactSection() {
               <div className="flex flex-wrap gap-3">
                 <Link
                   href={home.cta.buttonHref}
-                  className="inline-flex items-center gap-2 rounded-full border border-[var(--action)] bg-[var(--action)] px-5 py-3 text-sm text-[var(--background)] transition-colors hover:border-[var(--action-strong)] hover:bg-[var(--action-strong)]"
+                  className="button-primary ui-copy inline-flex items-center gap-2 border transition-colors"
                 >
                   <span>{home.cta.buttonLabel}</span>
                   <ArrowUpRight size={16} />

@@ -19,7 +19,7 @@ export function AboutSection() {
             <p className="body-lg max-w-[56ch]">{home.intro.body}</p>
           </Reveal>
           <Reveal delay={0.12}>
-            <div className="flex h-full min-h-[320px] flex-col justify-between rounded-[1.75rem] border border-[var(--line)] bg-[linear-gradient(135deg,rgba(107,183,166,0.14),rgba(243,239,231,0.03)_52%,rgba(217,138,82,0.08))] p-6 md:p-8">
+            <div className="flex h-full min-h-[320px] flex-col justify-between rounded-[1.75rem] border border-[var(--line)] bg-[linear-gradient(135deg,rgba(26,34,48,0.9),rgba(18,24,33,0.68)_52%,rgba(127,178,255,0.1))] p-6 md:p-8">
               <div className="space-y-3">
                 <p className="eyebrow">{about.notesTitle}</p>
                 <div className="text-[2rem] font-medium tracking-[-0.06em] text-[var(--foreground)] md:text-[3rem]">BW</div>

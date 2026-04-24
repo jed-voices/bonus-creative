@@ -10,11 +10,11 @@ interface MagneticButtonProps {
 
 export function MagneticButton({ href, children, variant = 'primary' }: MagneticButtonProps) {
   const base =
-    'magnetic-link group inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm tracking-[-0.02em] transition-colors';
+    'magnetic-link ui-copy group inline-flex items-center gap-2 border transition-colors';
   const styles =
     variant === 'primary'
-      ? 'border-[var(--accent)] bg-[var(--accent)] text-[var(--foreground)] hover:bg-[var(--accent-strong)] hover:border-[var(--accent-strong)]'
-      : 'border-[var(--line)] bg-[var(--surface)] text-[var(--foreground)] hover:border-[var(--line-strong)] hover:bg-[var(--surface-hover)]';
+      ? 'button-primary'
+      : 'button-secondary rounded-full px-5 py-3';
 
   return (
     <Link href={href} className={`${base} ${styles}`}>

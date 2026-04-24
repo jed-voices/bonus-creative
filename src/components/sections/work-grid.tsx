@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { Container } from '@/components/ui/container';
 import { Reveal } from '@/components/ui/reveal';
+import { PosterFrame } from '@/components/sections/poster-frame';
 import { home, work } from '@/lib/site';
 
 export function WorkGrid() {
@@ -20,34 +20,22 @@ export function WorkGrid() {
             <p className="body-lg max-w-2xl">{home.featuredWork.intro}</p>
           </Reveal>
         </div>
-        <div className="col-span-12 grid gap-5 lg:grid-cols-12 lg:gap-6">
+        <div className="col-span-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3 lg:gap-6">
           {work.map((item, index) => (
             <Reveal
               key={item.slug}
               delay={0.06 * index}
-              className={index === 0 ? 'lg:col-span-7' : index === 1 ? 'lg:col-span-5' : 'lg:col-span-6'}
+              className="h-full"
             >
               <article className="group relative flex h-full min-h-[320px] flex-col overflow-hidden rounded-[1.75rem] border border-[var(--line)] bg-[var(--surface)]">
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={item.poster}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition duration-700 group-hover:scale-[1.03]"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                  <video
-                    className="absolute inset-0 h-full w-full object-cover opacity-0 transition duration-500 group-hover:opacity-100"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="none"
-                  >
-                    <source src={item.previewVideo} type="video/mp4" />
-                  </video>
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,17,22,0.08),rgba(12,17,22,0.22),rgba(12,17,22,0.74))]" />
-                </div>
+                <PosterFrame
+                  image={item.posterImage}
+                  alt={`${item.title} production still`}
+                  eyebrow={item.posterEyebrow}
+                  title={item.posterTitle}
+                  tagline={item.posterTagline}
+                  previewVideo={item.previewVideo}
+                />
                 <div className="flex flex-1 flex-col justify-between gap-6 p-5 md:p-6">
                   <div className="space-y-3">
                     <p className="eyebrow">{item.category}</p>
@@ -57,7 +45,7 @@ export function WorkGrid() {
                   <div className="flex flex-wrap gap-3">
                     <Link
                       href={item.href}
-                      className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)] bg-[var(--accent)] px-4 py-2 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--accent-strong)] hover:bg-[var(--accent-strong)]"
+                      className="button-primary ui-copy inline-flex items-center gap-2 border transition-colors"
                       target={item.external ? '_blank' : undefined}
                       rel={item.external ? 'noreferrer' : undefined}
                     >
@@ -67,7 +55,7 @@ export function WorkGrid() {
                     {item.secondaryHref ? (
                       <Link
                         href={item.secondaryHref}
-                        className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--foreground)] transition-colors hover:border-[var(--line-strong)] hover:bg-[var(--surface-hover)]"
+                        className="button-secondary ui-copy inline-flex items-center gap-2 rounded-full px-4 py-2 transition-colors"
                         target={item.secondaryExternal ? '_blank' : undefined}
                         rel={item.secondaryExternal ? 'noreferrer' : undefined}
                       >

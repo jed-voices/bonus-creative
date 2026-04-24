@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="The Oklahoma Heismen production poster">
+  <defs>
+    <clipPath id="wideFrame">
+      <rect x="52" y="54" width="1096" height="642" rx="36"/>
+    </clipPath>
+    <clipPath id="insertFrame">
+      <rect x="760" y="98" width="318" height="204" rx="20"/>
+    </clipPath>
+    <linearGradient id="heismenShade" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0B0F14" stop-opacity=".10"/>
+      <stop offset="48%" stop-color="#0B0F14" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#0B0F14" stop-opacity=".9"/>
+    </linearGradient>
+    <radialGradient id="blueBurn" cx="28%" cy="18%" r="68%">
+      <stop offset="0%" stop-color="#9EC8FF" stop-opacity=".3"/>
+      <stop offset="56%" stop-color="#2A3F5F" stop-opacity=".18"/>
+      <stop offset="100%" stop-color="#0B0F14" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="goldBurn" cx="76%" cy="20%" r="42%">
+      <stop offset="0%" stop-color="#D6A85A" stop-opacity=".32"/>
+      <stop offset="100%" stop-color="#D6A85A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bottomBurn" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0B0F14" stop-opacity="0"/>
+      <stop offset="58%" stop-color="#0B0F14" stop-opacity=".56"/>
+      <stop offset="100%" stop-color="#0B0F14" stop-opacity=".94"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="#0B0F14"/>
+  <g clip-path="url(#wideFrame)">
+    <image href="/images/heismen-camera-setup.jpeg" x="0" y="-40" width="1200" height="800" preserveAspectRatio="xMidYMid slice"/>
+    <rect width="1200" height="750" fill="url(#heismenShade)"/>
+    <rect width="1200" height="750" fill="url(#blueBurn)"/>
+    <rect width="1200" height="750" fill="url(#goldBurn)"/>
+  </g>
+
+  <rect x="52" y="54" width="1096" height="642" rx="36" fill="none" stroke="#F5F7FA" stroke-opacity=".15"/>
+
+  <g clip-path="url(#insertFrame)">
+    <image href="/images/heismen-production-room.jpeg" x="728" y="78" width="382" height="254" preserveAspectRatio="xMidYMid slice"/>
+    <rect x="760" y="98" width="318" height="204" fill="#0B0F14" fill-opacity=".18"/>
+  </g>
+  <rect x="760" y="98" width="318" height="204" rx="20" fill="none" stroke="#F5F7FA" stroke-opacity=".18"/>
+  <path d="M786 272H936" stroke="#9EC8FF" stroke-opacity=".54" stroke-width="6" stroke-linecap="round"/>
+  <path d="M786 288H1018" stroke="#F5F7FA" stroke-opacity=".26" stroke-width="4" stroke-linecap="round"/>
+
+  <rect x="0" y="408" width="1200" height="342" fill="url(#bottomBurn)"/>
+
+  <g transform="translate(72 548)">
+    <text fill="#D6A85A" font-family="IBM Plex Mono, SFMono-Regular, Consolas, monospace" font-size="18" font-weight="500" letter-spacing="5">FEATURE DOCUMENTARY / OKLAHOMA STORY</text>
+    <text y="62" fill="#F5F7FA" font-family="Inter Tight, Sora, Arial, sans-serif" font-size="60" font-weight="800" letter-spacing="-1.5">THE OKLAHOMA HEISMEN</text>
+    <text y="98" fill="#B7C1CC" font-family="Manrope, Avenir Next, Arial, sans-serif" font-size="20">Behind the film: camera, crew, and story in motion.</text>
+  </g>
+</svg>

@@ -1,31 +1,49 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #0c1116;
-  --background-frost: rgba(12, 17, 22, 0.8);
-  --foreground: #f3efe7;
-  --foreground-soft: rgba(243, 239, 231, 0.72);
-  --muted: #9d978b;
-  --accent: #6bb7a6;
-  --accent-strong: #4f9f8f;
-  --accent-wash: rgba(107, 183, 166, 0.16);
-  --action: #d98a52;
-  --action-strong: #c97841;
-  --action-wash: rgba(217, 138, 82, 0.16);
-  --line: rgba(243, 239, 231, 0.12);
-  --line-strong: rgba(243, 239, 231, 0.2);
-  --surface-quiet: rgba(243, 239, 231, 0.02);
-  --surface: rgba(243, 239, 231, 0.04);
-  --surface-hover: rgba(243, 239, 231, 0.08);
-  --panel: rgba(8, 11, 15, 0.42);
+  --color-bg-primary: #0b0f14;
+  --color-bg-secondary: #121821;
+  --color-bg-elevated: #1a2230;
+  --color-text-primary: #f5f7fa;
+  --color-text-body: #a6b2bd;
+  --color-text-secondary: #8793a1;
+  --color-text-tertiary: #6b7785;
+  --color-accent-primary: #7fb2ff;
+  --color-accent-soft: #2a3f5f;
+  --color-accent-warm: #d6a85a;
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.16);
+  --background: var(--color-bg-primary);
+  --background-frost: rgba(11, 15, 20, 0.88);
+  --foreground: var(--color-text-primary);
+  --foreground-soft: var(--color-text-secondary);
+  --muted: var(--color-text-secondary);
+  --subtle: var(--color-text-tertiary);
+  --accent: var(--color-accent-primary);
+  --accent-strong: #a8ccff;
+  --accent-soft: var(--color-accent-soft);
+  --accent-warm: var(--color-accent-warm);
+  --accent-wash: rgba(42, 63, 95, 0.76);
+  --action: var(--color-accent-primary);
+  --action-strong: #a8ccff;
+  --action-wash: rgba(42, 63, 95, 0.5);
+  --line: var(--color-border-subtle);
+  --line-strong: var(--color-border-strong);
+  --surface-quiet: rgba(18, 24, 33, 0.56);
+  --surface: rgba(26, 34, 48, 0.72);
+  --surface-hover: rgba(32, 42, 58, 0.9);
+  --panel: rgba(18, 24, 33, 0.78);
   --max-width: 1600px;
   --grid-gap: clamp(1rem, 2vw, 1.75rem);
   --section-space: clamp(5rem, 10vw, 9rem);
-  --headline-xl: clamp(3.25rem, 8vw, 8rem);
-  --headline-lg: clamp(2rem, 4vw, 4rem);
+  --headline-xl: 84px;
+  --headline-lg: 40px;
   --headline-md: clamp(1.4rem, 2vw, 2rem);
-  --body-lg: clamp(1rem, 1.3vw, 1.125rem);
+  --body-lg: 18px;
   --body-sm: 0.9375rem;
+  --font-display: 'Inter Tight', 'Sora', sans-serif;
+  --font-body: 'Manrope', 'Avenir Next', 'Segoe UI', sans-serif;
+  --font-accent: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
 }
 
 * {
@@ -41,10 +59,12 @@ body {
   min-height: 100vh;
   background: var(--background);
   background-image:
-    radial-gradient(circle at top left, rgba(107, 183, 166, 0.16), transparent 36%),
-    radial-gradient(circle at 80% 12%, rgba(217, 138, 82, 0.14), transparent 26%);
+    radial-gradient(circle at 14% 10%, rgba(26, 34, 48, 0.92), transparent 32%),
+    radial-gradient(circle at 78% 18%, rgba(18, 24, 33, 0.72), transparent 26%),
+    linear-gradient(180deg, rgba(26, 34, 48, 0.32), transparent 24%);
   color: var(--foreground);
-  font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  font-family: var(--font-body);
+  font-weight: 400;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -86,35 +106,43 @@ textarea {
 
 .eyebrow {
   margin: 0;
-  font-size: 0.75rem;
-  letter-spacing: 0.16em;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--color-text-tertiary);
 }
 
 .display-xl {
   margin: 0;
   font-size: var(--headline-xl);
-  line-height: 0.92;
-  letter-spacing: -0.06em;
-  font-weight: 500;
-  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-wrap: balance;
 }
 
 .display-lg {
   margin: 0;
   font-size: var(--headline-lg);
-  line-height: 0.96;
-  letter-spacing: -0.045em;
-  font-weight: 500;
-  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  text-wrap: balance;
 }
 
 .body-lg {
   margin: 0;
+  font-family: var(--font-body);
   font-size: var(--body-lg);
-  line-height: 1.6;
-  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--color-text-body);
 }
 
 .body-sm {
@@ -122,6 +150,91 @@ textarea {
   font-size: var(--body-sm);
   line-height: 1.5;
   color: var(--muted);
+}
+
+.ui-copy {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+.button-primary {
+  background: #9EC8FF;
+  color: #0B0F14;
+  border-color: #9EC8FF;
+  border-radius: 999px;
+  padding: 14px 22px;
+}
+
+.button-primary:hover,
+.button-primary:focus-visible {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+
+.button-secondary {
+  background: transparent;
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text-primary);
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+  background: var(--surface);
+}
+
+.poster-frame {
+  container-type: inline-size;
+}
+
+.poster-frame__border {
+  inset: clamp(0.85rem, 3.6cqw, 1.25rem);
+  border-radius: clamp(1rem, 4cqw, 1.35rem);
+}
+
+.poster-frame__top-line {
+  left: clamp(1.25rem, 5cqw, 2rem);
+  top: clamp(1.25rem, 5cqw, 2rem);
+  width: clamp(4.5rem, 24cqw, 9rem);
+}
+
+.poster-frame__bottom-line {
+  right: clamp(1.25rem, 5cqw, 2rem);
+  bottom: clamp(1.25rem, 5cqw, 2rem);
+  width: clamp(5rem, 30cqw, 11rem);
+}
+
+.poster-frame__content {
+  left: clamp(1.25rem, 5cqw, 2rem);
+  right: clamp(1.25rem, 5cqw, 2rem);
+  bottom: clamp(1.25rem, 5cqw, 2rem);
+}
+
+.poster-frame__eyebrow {
+  font-size: clamp(0.58rem, 1.75cqw, 0.7rem);
+  letter-spacing: clamp(0.14em, 0.9cqw, 0.26em);
+}
+
+.poster-frame__title {
+  font-size: clamp(1.85rem, 9.8cqw, 4.15rem);
+}
+
+.poster-frame__tagline {
+  font-size: clamp(0.78rem, 2.2cqw, 0.875rem);
+}
+
+@container (min-width: 520px) {
+  .poster-frame__content {
+    grid-template-columns: 1fr minmax(13rem, 0.42fr);
+    align-items: end;
+    gap: 1rem;
+  }
+
+  .poster-frame__tagline {
+    text-align: right;
+  }
 }
 
 .hairline {
